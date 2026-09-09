@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mi primera página web</title>
+
+  <link
+    rel="stylesheet"
+    href="estilos.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       MENÚ
+  ========================== -->
+
+  <header class="encabezado">
+
+    <div class="logo">
+      Mi Web
+    </div>
+
+
+    <nav class="menu">
+
+      <a href="#inicio">
+        Inicio
+      </a>
+
+      <a href="#nosotros">
+        Nosotros
+      </a>
+
+      <a href="#servicios">
+        Servicios
+      </a>
+
+      <a href="#contacto">
+        Contacto
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================
+       PORTADA / HERO
+  ========================== -->
+
+  <section
+    id="inicio"
+    class="hero"
+  >
+
+    <div class="hero-contenido">
+
+
+      <!-- LADO IZQUIERDO -->
+
+      <div class="hero-texto">
+
+        <p class="subtitulo">
+          MI PRIMER SITIO WEB
+        </p>
+
+        <h1>
+          Estoy aprendiendo
+          desarrollo web
+        </h1>
+
+        <p class="descripcion">
+
+          Esta página fue creada utilizando
+          HTML, CSS y JavaScript.
+
+          Poco a poco iremos agregando
+          nuevas funciones.
+
+        </p>
+
+
+        <button onclick="saludar()">
+          Conocer más
+        </button>
+
+      </div>
+
+
+
+      <!-- LADO DERECHO -->
+
+      <div class="hero-imagen">
+
+        <img
+          src="imagenes/Portada.png"
+          alt="Logo UDA"
+        >
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       NOSOTROS
+  ========================== -->
+
+  <section
+    id="nosotros"
+    class="seccion"
+  >
+
+    <div class="contenido">
+
+      <p class="etiqueta">
+        SOBRE NOSOTROS
+      </p>
+
+      <h2>
+        Nosotros
+      </h2>
+
+      <p>
+
+        Esta es mi primera página web.
+
+        Estoy aprendiendo cómo utilizar
+        HTML para crear la estructura,
+        CSS para diseñarla y JavaScript
+        para agregar funcionalidades.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       SERVICIOS
+  ========================== -->
+
+  <section
+    id="servicios"
+    class="seccion servicios"
+  >
+
+    <div class="contenido">
+
+      <p class="etiqueta">
+        LO QUE HACEMOS
+      </p>
+
+      <h2>
+        Servicios
+      </h2>
+
+
+      <div class="contenedor-tarjetas">
+
+
+        <div class="tarjeta">
+
+          <div class="icono">
+            01
+          </div>
+
+          <h3>
+            Diseño Web
+          </h3>
+
+          <p>
+            Creamos páginas web modernas
+            y adaptadas a diferentes
+            dispositivos.
+          </p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+          <div class="icono">
+            02
+          </div>
+
+          <h3>
+            Desarrollo
+          </h3>
+
+          <p>
+            Podemos agregar funciones
+            utilizando JavaScript y otras
+            tecnologías.
+          </p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+          <div class="icono">
+            03
+          </div>
+
+          <h3>
+            Aplicaciones
+          </h3>
+
+          <p>
+            Una página puede conectarse
+            posteriormente con bases
+            de datos y otros sistemas.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- =========================
+     CONTACTO
+========================== -->
+
+<section
+  id="contacto"
+  class="seccion contacto"
+>
+
+  <div class="contenido">
+
+    <p class="etiqueta">
+      HABLEMOS
+    </p>
+
+    <h2>
+      Contacto
+    </h2>
+
+    <p class="texto-contacto">
+      Completa el formulario y envíanos
+      tu mensaje.
+    </p>
+
+
+    <form
+      id="formularioContacto"
+      class="formulario-contacto"
+
+      action="https://script.google.com/macros/s/AKfycbyaZkfrmKI_kRTHV9h6Tu19hi5_56x1GxnVLF0dlutodoB7HQtSBGL1282Q-NZoCqmRVA/exec"
+
+      method="POST"
+
+      target="respuestaOculta"
+
+      onsubmit="prepararEnvio()"
+    >
+
+
+      <!-- NOMBRE -->
+
+      <div class="grupo-campo">
+
+        <label for="nombre">
+          Nombre
+        </label>
+
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Escribe tu nombre"
+          required
+        >
+
+      </div>
+
+
+
+      <!-- CORREO -->
+
+      <div class="grupo-campo">
+
+        <label for="correo">
+          Correo electrónico
+        </label>
+
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="ejemplo@correo.com"
+          required
+        >
+
+      </div>
+
+
+
+      <!-- TELÉFONO -->
+
+      <div class="grupo-campo">
+
+        <label for="telefono">
+          Teléfono
+        </label>
+
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="+502 0000-0000"
+        >
+
+      </div>
+
+
+
+      <!-- MENSAJE -->
+
+      <div class="grupo-campo">
+
+        <label for="mensaje">
+          Mensaje
+        </label>
+
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="6"
+          placeholder="Escribe tu mensaje"
+          required
+        ></textarea>
+
+      </div>
+
+
+
+      <button
+        type="submit"
+        class="boton-enviar"
+      >
+        Enviar mensaje
+      </button>
+
+
+      <p
+        id="mensajeFormulario"
+        class="mensaje-formulario"
+      ></p>
+
+
+    </form>
+
+
+    <!--
+      Recibe silenciosamente la respuesta
+      de Google Apps Script.
+    -->
+
+    <iframe
+      name="respuestaOculta"
+      id="respuestaOculta"
+      style="display: none;"
+      onload="confirmarEnvio()"
+    ></iframe>
+
+
+  </div>
+
+</section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Mi primera página web
+    </p>
+
+  </footer>
+
+
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

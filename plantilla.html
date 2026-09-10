@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Plantilla | Mi Primera Web
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="estilos.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       MENÚ
+  ========================== -->
+
+  <header class="encabezado">
+
+    <div class="logo">
+      Mi Primera Web!
+    </div>
+
+
+    <nav class="menu">
+
+      <a href="index.html">
+        Inicio
+      </a>
+
+      <a href="nosotros.html">
+        Nosotros
+      </a>
+
+      <a href="plantilla.html">
+        Plantilla
+      </a>
+
+      <a href="contacto.html">
+        Contacto
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================
+       ENCABEZADO PLANTILLA
+  ========================== -->
+
+  <section class="plantilla-encabezado">
+
+    <div class="plantilla-titulo">
+
+      <p
+        class="
+          etiqueta
+          plantilla-etiqueta
+        "
+      >
+        UNIVERSIDAD DE AMÉRICA
+      </p>
+
+
+      <h1>
+        Nuestra Plantilla
+      </h1>
+
+
+      <p>
+        Conoce a quienes forman
+        parte de nuestro equipo.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PLANTILLA
+  ========================== -->
+
+  <section class="plantilla-seccion">
+
+    <div class="plantilla-contenido">
+
+
+      <!-- =========================
+           FILTROS
+      ========================== -->
+
+      <div class="filtros-plantilla">
+
+
+        <button
+          class="filtro-btn activo"
+          onclick="
+            filtrarJugadoras(
+              'todas',
+              this
+            )
+          "
+        >
+          Todas
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="
+            filtrarJugadoras(
+              'portero',
+              this
+            )
+          "
+        >
+          Porteros
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="
+            filtrarJugadoras(
+              'defensa',
+              this
+            )
+          "
+        >
+          Defensas
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="
+            filtrarJugadoras(
+              'centrocampista',
+              this
+            )
+          "
+        >
+          Centrocampistas
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="
+            filtrarJugadoras(
+              'delantero',
+              this
+            )
+          "
+        >
+          Delanteros
+        </button>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           ESTADO DE CARGA
+      ========================== -->
+
+      <div
+        id="estadoPlantilla"
+        class="estado-plantilla"
+      >
+        Cargando plantilla...
+      </div>
+
+
+
+      <!-- =========================
+           AQUÍ SE CREARÁN
+           LAS TARJETAS
+      ========================== -->
+
+      <div
+        id="gridJugadoras"
+        class="grid-jugadoras"
+      >
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Mi primera página web
+    </p>
+
+  </footer>
+
+
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

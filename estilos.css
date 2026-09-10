@@ -1066,3 +1066,1027 @@ footer p {
     #e5e7eb;
 
 }
+
+/* =========================
+   PLANTILLA UDA
+========================= */
+
+.plantilla-encabezado {
+
+  background:
+    #2538b8;
+
+  color:
+    white;
+
+  padding:
+    80px 30px;
+
+  text-align:
+    center;
+
+}
+
+
+.plantilla-titulo {
+
+  max-width:
+    900px;
+
+  margin:
+    auto;
+
+}
+
+
+.plantilla-etiqueta {
+
+  color:
+    white;
+
+}
+
+
+.plantilla-titulo h1 {
+
+  font-size:
+    56px;
+
+  margin:
+    10px 0 20px;
+
+}
+
+
+.plantilla-titulo p {
+
+  max-width:
+    650px;
+
+  margin-left:
+    auto;
+
+  margin-right:
+    auto;
+
+}
+
+
+
+/* =========================
+   CONTENIDO PLANTILLA
+========================= */
+
+.plantilla-seccion {
+
+  background:
+    #f4f6f9;
+
+  padding:
+    70px 30px 100px;
+
+}
+
+
+.plantilla-contenido {
+
+  width:
+    100%;
+
+  max-width:
+    1200px;
+
+  margin:
+    auto;
+
+}
+
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros-plantilla {
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    12px;
+
+  margin-bottom:
+    50px;
+
+}
+
+
+.filtro-btn {
+
+  margin:
+    0;
+
+  padding:
+    12px 22px;
+
+  background:
+    white;
+
+  color:
+    #2538b8;
+
+  border:
+    2px solid #2538b8;
+
+  border-radius:
+    30px;
+
+  font-size:
+    15px;
+
+  cursor:
+    pointer;
+
+}
+
+
+.filtro-btn:hover {
+
+  background:
+    #2538b8;
+
+  color:
+    white;
+
+}
+
+
+.filtro-btn.activo {
+
+  background:
+    #2538b8;
+
+  color:
+    white;
+
+}
+
+
+
+/* =========================
+   GRID DE JUGADORAS
+========================= */
+
+.grid-jugadoras {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    25px;
+
+}
+
+
+
+/* =========================
+   TARJETA JUGADORA
+========================= */
+
+.jugadora-card {
+
+  background:
+    white;
+
+  border-radius:
+    20px;
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.10);
+
+  transition:
+    0.3s;
+
+}
+
+
+.jugadora-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+/* =========================
+   FOTO
+========================= */
+
+.jugadora-foto {
+
+  position:
+    relative;
+
+  height:
+    330px;
+
+  overflow:
+    hidden;
+
+  background:
+    #dfe4ef;
+
+}
+
+
+.jugadora-foto img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  display:
+    block;
+
+}
+
+
+.foto-placeholder {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font-size:
+    22px;
+
+  font-weight:
+    bold;
+
+  color:
+    #8d96a8;
+
+  letter-spacing:
+    3px;
+
+}
+
+
+
+/* =========================
+   DORSAL
+========================= */
+
+.dorsal {
+
+  position:
+    absolute;
+
+  right:
+    15px;
+
+  bottom:
+    10px;
+
+  font-size:
+    58px;
+
+  font-weight:
+    900;
+
+  color:
+    white;
+
+  line-height:
+    1;
+
+  text-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.jugadora-info {
+
+  padding:
+    22px;
+
+}
+
+
+.jugadora-info .posicion {
+
+  margin:
+    0 0 6px;
+
+  color:
+    #2538b8;
+
+  font-size:
+    14px;
+
+  font-weight:
+    bold;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    1px;
+
+}
+
+
+.jugadora-info h2 {
+
+  margin:
+    0;
+
+  font-size:
+    22px;
+
+  color:
+    #222;
+
+}
+
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 1000px) {
+
+  .grid-jugadoras {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+}
+
+
+
+/* =========================
+   TELÉFONOS
+========================= */
+
+@media (max-width: 700px) {
+
+  .plantilla-encabezado {
+
+    padding:
+      60px 20px;
+
+  }
+
+
+  .plantilla-titulo h1 {
+
+    font-size:
+      40px;
+
+  }
+
+
+  .plantilla-seccion {
+
+    padding:
+      45px 15px 70px;
+
+  }
+
+
+  .grid-jugadoras {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      14px;
+
+  }
+
+
+  .jugadora-foto {
+
+    height:
+      240px;
+
+  }
+
+
+  .jugadora-info {
+
+    padding:
+      15px;
+
+  }
+
+
+  .jugadora-info h2 {
+
+    font-size:
+      17px;
+
+  }
+
+
+  .jugadora-info .posicion {
+
+    font-size:
+      11px;
+
+  }
+
+
+  .dorsal {
+
+    font-size:
+      42px;
+
+  }
+
+
+  .filtro-btn {
+
+    padding:
+      10px 16px;
+
+    font-size:
+      13px;
+
+  }
+
+}
+
+
+
+/* =========================
+   TELÉFONOS PEQUEÑOS
+========================= */
+
+@media (max-width: 400px) {
+
+  .jugadora-foto {
+
+    height:
+      210px;
+
+  }
+
+}
+
+/* =========================
+   PLANTILLA UDA
+========================= */
+
+.plantilla-encabezado {
+
+  background:
+    #2538b8;
+
+  color:
+    white;
+
+  padding:
+    80px 30px;
+
+  text-align:
+    center;
+
+}
+
+
+.plantilla-titulo {
+
+  max-width:
+    900px;
+
+  margin:
+    auto;
+
+}
+
+
+.plantilla-etiqueta {
+
+  color:
+    white;
+
+}
+
+
+.plantilla-titulo h1 {
+
+  font-size:
+    56px;
+
+  margin:
+    10px 0 20px;
+
+}
+
+
+.plantilla-titulo p {
+
+  max-width:
+    650px;
+
+  margin-left:
+    auto;
+
+  margin-right:
+    auto;
+
+}
+
+
+
+/* =========================
+   CONTENIDO PLANTILLA
+========================= */
+
+.plantilla-seccion {
+
+  background:
+    #f4f6f9;
+
+  padding:
+    70px 30px 100px;
+
+}
+
+
+.plantilla-contenido {
+
+  width:
+    100%;
+
+  max-width:
+    1200px;
+
+  margin:
+    auto;
+
+}
+
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros-plantilla {
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    12px;
+
+  margin-bottom:
+    50px;
+
+}
+
+
+.filtro-btn {
+
+  margin:
+    0;
+
+  padding:
+    12px 22px;
+
+  background:
+    white;
+
+  color:
+    #2538b8;
+
+  border:
+    2px solid #2538b8;
+
+  border-radius:
+    30px;
+
+  font-size:
+    15px;
+
+  cursor:
+    pointer;
+
+}
+
+
+.filtro-btn:hover {
+
+  background:
+    #2538b8;
+
+  color:
+    white;
+
+}
+
+
+.filtro-btn.activo {
+
+  background:
+    #2538b8;
+
+  color:
+    white;
+
+}
+
+
+
+/* =========================
+   GRID DE JUGADORAS
+========================= */
+
+.grid-jugadoras {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    25px;
+
+}
+
+
+
+/* =========================
+   TARJETA JUGADORA
+========================= */
+
+.jugadora-card {
+
+  background:
+    white;
+
+  border-radius:
+    20px;
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.10);
+
+  transition:
+    0.3s;
+
+}
+
+
+.jugadora-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+/* =========================
+   FOTO
+========================= */
+
+.jugadora-foto {
+
+  position:
+    relative;
+
+  height:
+    330px;
+
+  overflow:
+    hidden;
+
+  background:
+    #dfe4ef;
+
+}
+
+
+.jugadora-foto img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  display:
+    block;
+
+}
+
+
+.foto-placeholder {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font-size:
+    22px;
+
+  font-weight:
+    bold;
+
+  color:
+    #8d96a8;
+
+  letter-spacing:
+    3px;
+
+}
+
+
+
+/* =========================
+   DORSAL
+========================= */
+
+.dorsal {
+
+  position:
+    absolute;
+
+  right:
+    15px;
+
+  bottom:
+    10px;
+
+  font-size:
+    58px;
+
+  font-weight:
+    900;
+
+  color:
+    white;
+
+  line-height:
+    1;
+
+  text-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.jugadora-info {
+
+  padding:
+    22px;
+
+}
+
+
+.jugadora-info .posicion {
+
+  margin:
+    0 0 6px;
+
+  color:
+    #2538b8;
+
+  font-size:
+    14px;
+
+  font-weight:
+    bold;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    1px;
+
+}
+
+
+.jugadora-info h2 {
+
+  margin:
+    0;
+
+  font-size:
+    22px;
+
+  color:
+    #222;
+
+}
+
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 1000px) {
+
+  .grid-jugadoras {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+}
+
+
+
+/* =========================
+   TELÉFONOS
+========================= */
+
+@media (max-width: 700px) {
+
+  .plantilla-encabezado {
+
+    padding:
+      60px 20px;
+
+  }
+
+
+  .plantilla-titulo h1 {
+
+    font-size:
+      40px;
+
+  }
+
+
+  .plantilla-seccion {
+
+    padding:
+      45px 15px 70px;
+
+  }
+
+
+  .grid-jugadoras {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      14px;
+
+  }
+
+
+  .jugadora-foto {
+
+    height:
+      240px;
+
+  }
+
+
+  .jugadora-info {
+
+    padding:
+      15px;
+
+  }
+
+
+  .jugadora-info h2 {
+
+    font-size:
+      17px;
+
+  }
+
+
+  .jugadora-info .posicion {
+
+    font-size:
+      11px;
+
+  }
+
+
+  .dorsal {
+
+    font-size:
+      42px;
+
+  }
+
+
+  .filtro-btn {
+
+    padding:
+      10px 16px;
+
+    font-size:
+      13px;
+
+  }
+
+}
+
+
+
+/* =========================
+   TELÉFONOS PEQUEÑOS
+========================= */
+
+@media (max-width: 400px) {
+
+  .jugadora-foto {
+
+    height:
+      210px;
+
+  }
+
+}

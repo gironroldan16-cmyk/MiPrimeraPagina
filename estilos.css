@@ -87,7 +87,7 @@ body {
     flex;
 
   gap:
-    30px;
+    38px;
 
 }
 
@@ -101,7 +101,7 @@ body {
     none;
 
   font-size:
-    17px;
+    20px;
 
   font-weight:
     bold;
@@ -2323,6 +2323,31 @@ footer p {
 
   .filtros-plantilla {
     margin-bottom: 16px;
+  }
+
+}
+
+/* =========================================
+   LOGO UDA EN MENÚ
+   ========================================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-uda {
+  height: 105px;
+  width: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+
+  .logo-uda {
+    height: 90px;
+    margin-top: 8px;
   }
 
 }

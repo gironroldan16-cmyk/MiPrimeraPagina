@@ -2265,3 +2265,64 @@ footer p {
 
 }
 
+/* =========================================
+   AJUSTE FINAL DE ESPACIOS - PLANTILLA UDA
+   ========================================= */
+
+.plantilla-encabezado {
+  padding: 15px 30px 40px;
+}
+
+.plantilla-etiqueta {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.plantilla-titulo h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.plantilla-titulo p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* ACERCAR FILTROS AL ENCABEZADO */
+
+.plantilla-seccion {
+  padding-top: 18px;
+  padding-bottom: 70px;
+}
+
+.filtros-plantilla {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   TELÉFONO
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .plantilla-encabezado {
+    padding: 10px 18px 25px;
+  }
+
+  .plantilla-titulo h1 {
+    margin-bottom: 10px;
+  }
+
+  .plantilla-seccion {
+    padding-top: 12px;
+    padding-bottom: 50px;
+  }
+
+  .filtros-plantilla {
+    margin-bottom: 16px;
+  }
+
+}

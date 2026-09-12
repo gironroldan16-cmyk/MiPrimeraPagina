@@ -2090,3 +2090,178 @@ footer p {
   }
 
 }
+
+/* =========================================
+   FILTROS DE PLANTILLA
+   ========================================= */
+
+.filtros-plantilla {
+  width: 100%;
+  max-width: 1700px;
+
+  margin: 0 auto 50px auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* BOTONES */
+
+.filtro-btn {
+  flex: 0 1 calc(20% - 18px);
+
+  min-width: 210px;
+  max-width: 300px;
+
+  min-height: 64px;
+
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 3px solid #243bc1;
+  border-radius: 40px;
+
+  background: #ffffff;
+  color: #243bc1;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* BOTÓN ACTIVO */
+
+.filtro-btn.activo {
+  background: #243bc1;
+  color: #ffffff;
+}
+
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.filtro-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+  .filtros-plantilla {
+    max-width: 950px;
+    gap: 14px;
+  }
+
+  .filtro-btn {
+    flex: 0 1 calc(33.333% - 14px);
+
+    min-width: 190px;
+    max-width: 280px;
+
+    font-size: 16px;
+  }
+
+}
+
+
+
+/* =========================================
+   TELÉFONO
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .filtros-plantilla {
+    width: 100%;
+
+    padding: 0 14px;
+
+    margin-bottom: 30px;
+
+    gap: 10px;
+  }
+
+
+  .filtro-btn {
+    flex: 0 1 calc(50% - 6px);
+
+    min-width: 0;
+    max-width: none;
+
+    min-height: 52px;
+
+    padding: 10px 8px;
+
+    font-size: 13px;
+
+    line-height: 1.15;
+  }
+
+}
+
+
+
+/* =========================================
+   TELÉFONOS MUY PEQUEÑOS
+   ========================================= */
+
+@media (max-width: 390px) {
+
+  .filtro-btn {
+    font-size: 12px;
+    padding: 9px 6px;
+  }
+
+}
+
+/* =========================================
+   AJUSTE DE ESPACIOS - PLANTILLA UDA
+   ========================================= */
+
+.plantilla-seccion {
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.filtros-plantilla {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+
+/* TELÉFONO */
+
+@media (max-width: 700px) {
+
+  .plantilla-seccion {
+    padding-top: 25px;
+    padding-bottom: 50px;
+  }
+
+  .filtros-plantilla {
+    margin-bottom: 20px;
+  }
+
+}
+

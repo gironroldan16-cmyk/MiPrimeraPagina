@@ -9,7 +9,6 @@ const URL_PLANTILLA =
   "https://script.google.com/macros/s/AKfycbyaZkfrmKI_kRTHV9h6Tu19hi5_56x1GxnVLF0dlutodoB7HQtSBGL1282Q-NZoCqmRVA/exec";
 
 
-
 /* =========================================
    FORMULARIO DE CONTACTO
 ========================================= */
@@ -21,35 +20,26 @@ function prepararEnvio() {
       "formularioContacto"
     );
 
-
   if (!formulario) {
     return;
   }
-
 
   if (!formulario.checkValidity()) {
     return;
   }
 
-
   formularioEnviado = true;
-
 
   const mensajeFormulario =
     document.getElementById(
       "mensajeFormulario"
     );
 
-
   if (mensajeFormulario) {
-
     mensajeFormulario.textContent =
       "Enviando mensaje...";
-
   }
-
 }
-
 
 
 function confirmarEnvio() {
@@ -58,53 +48,41 @@ function confirmarEnvio() {
     return;
   }
 
-
   const campoNombre =
     document.getElementById(
       "nombre"
     );
-
 
   const mensajeFormulario =
     document.getElementById(
       "mensajeFormulario"
     );
 
-
   const formulario =
     document.getElementById(
       "formularioContacto"
     );
-
 
   if (
     !campoNombre ||
     !mensajeFormulario ||
     !formulario
   ) {
-
     return;
-
   }
-
 
   const nombre =
     campoNombre.value;
-
 
   mensajeFormulario.textContent =
     "¡Gracias " +
     nombre +
     "! Tu mensaje fue guardado correctamente.";
 
-
   formulario.reset();
 
-
   formularioEnviado = false;
-
 }
-
 
 
 /* =========================================
@@ -118,7 +96,6 @@ function cargarPlantilla() {
       "gridJugadoras"
     );
 
-
   /*
     Si no estamos en plantilla.html,
     no hacemos nada.
@@ -128,20 +105,15 @@ function cargarPlantilla() {
     return;
   }
 
-
   const estado =
     document.getElementById(
       "estadoPlantilla"
     );
 
-
   if (estado) {
-
     estado.textContent =
       "Cargando plantilla...";
-
   }
-
 
   /*
     Creamos un script temporal
@@ -153,13 +125,11 @@ function cargarPlantilla() {
       "script"
     );
 
-
   script.src =
     URL_PLANTILLA +
     "?callback=recibirPlantilla" +
     "&t=" +
     Date.now();
-
 
   script.onerror =
     function() {
@@ -173,13 +143,11 @@ function cargarPlantilla() {
 
     };
 
-
   document.body.appendChild(
     script
   );
 
 }
-
 
 
 /* =========================================
@@ -193,17 +161,14 @@ function recibirPlantilla(respuesta) {
       "gridJugadoras"
     );
 
-
   const estado =
     document.getElementById(
       "estadoPlantilla"
     );
 
-
   if (!grid) {
     return;
   }
-
 
   if (
     !respuesta ||
@@ -218,16 +183,12 @@ function recibirPlantilla(respuesta) {
     }
 
     return;
-
   }
-
 
   const jugadores =
     respuesta.jugadores || [];
 
-
   grid.innerHTML = "";
-
 
   if (jugadores.length === 0) {
 
@@ -239,11 +200,10 @@ function recibirPlantilla(respuesta) {
     }
 
     return;
-
   }
 
-
   jugadores.forEach(
+
     function(jugador) {
 
       const tarjeta =
@@ -251,23 +211,19 @@ function recibirPlantilla(respuesta) {
           jugador
         );
 
-
       grid.appendChild(
         tarjeta
       );
 
     }
+
   );
 
-
   if (estado) {
-
     estado.textContent = "";
-
   }
 
 }
-
 
 
 /* =========================================
@@ -283,20 +239,23 @@ function crearTarjetaJugador(
       "article"
     );
 
-
   tarjeta.className =
     "jugadora-card";
 
+
+  /*
+    Aquí tomamos la posición que viene
+    desde Google Sheets y la convertimos
+    en la categoría utilizada por los filtros.
+  */
 
   const posicionNormalizada =
     normalizarPosicion(
       jugador.posicion
     );
 
-
   tarjeta.dataset.posicion =
     posicionNormalizada;
-
 
 
   /* FOTO */
@@ -305,7 +264,6 @@ function crearTarjetaJugador(
     document.createElement(
       "div"
     );
-
 
   contenedorFoto.className =
     "jugadora-foto";
@@ -324,31 +282,25 @@ function crearTarjetaJugador(
         "img"
       );
 
-
     imagen.src =
       urlFoto;
 
-
     imagen.alt =
       jugador.nombre;
-
 
     imagen.onerror =
       function() {
 
         imagen.remove();
 
-
         const placeholder =
           crearPlaceholder();
-
 
         contenedorFoto.prepend(
           placeholder
         );
 
       };
-
 
     contenedorFoto.appendChild(
       imagen
@@ -363,7 +315,6 @@ function crearTarjetaJugador(
   }
 
 
-
   /* DORSAL */
 
   const dorsal =
@@ -371,21 +322,17 @@ function crearTarjetaJugador(
       "span"
     );
 
-
   dorsal.className =
     "dorsal";
-
 
   dorsal.textContent =
     formatearDorsal(
       jugador.dorsal
     );
 
-
   contenedorFoto.appendChild(
     dorsal
   );
-
 
 
   /* INFORMACIÓN */
@@ -394,7 +341,6 @@ function crearTarjetaJugador(
     document.createElement(
       "div"
     );
-
 
   informacion.className =
     "jugadora-info";
@@ -405,10 +351,14 @@ function crearTarjetaJugador(
       "p"
     );
 
-
   posicion.className =
     "posicion";
 
+  /*
+    Importante:
+    aquí mostramos exactamente el texto
+    que viene de Google Sheets.
+  */
 
   posicion.textContent =
     jugador.posicion;
@@ -419,7 +369,6 @@ function crearTarjetaJugador(
       "h2"
     );
 
-
   nombre.textContent =
     jugador.nombre;
 
@@ -428,11 +377,9 @@ function crearTarjetaJugador(
     posicion
   );
 
-
   informacion.appendChild(
     nombre
   );
-
 
 
   /* ARMAR TARJETA */
@@ -441,16 +388,13 @@ function crearTarjetaJugador(
     contenedorFoto
   );
 
-
   tarjeta.appendChild(
     informacion
   );
 
-
   return tarjeta;
 
 }
-
 
 
 /* =========================================
@@ -464,19 +408,15 @@ function crearPlaceholder() {
       "div"
     );
 
-
   placeholder.className =
     "foto-placeholder";
-
 
   placeholder.textContent =
     "FOTO";
 
-
   return placeholder;
 
 }
-
 
 
 /* =========================================
@@ -488,7 +428,6 @@ function convertirLinkDrive(url) {
   if (!url) {
     return "";
   }
-
 
   /*
     Convierte:
@@ -503,12 +442,10 @@ function convertirLinkDrive(url) {
       /\/file\/d\/([^/]+)/
     );
 
-
   if (coincidencia) {
 
     const id =
       coincidencia[1];
-
 
     return (
       "https://drive.google.com/thumbnail" +
@@ -519,11 +456,9 @@ function convertirLinkDrive(url) {
 
   }
 
-
   return url;
 
 }
-
 
 
 /* =========================================
@@ -534,10 +469,13 @@ function formatearDorsal(
   dorsal
 ) {
 
-  if (!dorsal) {
+  if (
+    dorsal === null ||
+    dorsal === undefined ||
+    dorsal === ""
+  ) {
     return "";
   }
-
 
   return String(
     dorsal
@@ -549,6 +487,40 @@ function formatearDorsal(
 }
 
 
+/* =========================================
+   NORMALIZAR TEXTO
+========================================= */
+
+function normalizarTexto(
+  texto
+) {
+
+  if (!texto) {
+    return "";
+  }
+
+  return String(texto)
+
+    .toLowerCase()
+
+    .trim()
+
+    .normalize(
+      "NFD"
+    )
+
+    .replace(
+      /[\u0300-\u036f]/g,
+      ""
+    )
+
+    .replace(
+      /\s+/g,
+      " "
+    );
+
+}
+
 
 /* =========================================
    NORMALIZAR POSICIÓN
@@ -558,22 +530,121 @@ function normalizarPosicion(
   posicion
 ) {
 
-  if (!posicion) {
-    return "";
+  const valor =
+    normalizarTexto(
+      posicion
+    );
+
+
+  /* PORTEROS */
+
+  if (
+    valor === "portero" ||
+    valor === "porteros"
+  ) {
+
+    return "portero";
+
   }
 
 
-  return posicion
-    .toLowerCase()
-    .trim()
-    .normalize("NFD")
-    .replace(
-      /[\u0300-\u036f]/g,
-      ""
-    );
+  /* DEFENSAS LATERALES */
+
+  if (
+    valor === "defensa lateral" ||
+    valor === "defensas laterales"
+  ) {
+
+    return "defensa-lateral";
+
+  }
+
+
+  /* DEFENSAS CENTRALES */
+
+  if (
+    valor === "defensa central" ||
+    valor === "defensas centrales"
+  ) {
+
+    return "defensa-central";
+
+  }
+
+
+  /* VOLANTES INTERIORES */
+
+  if (
+    valor === "volante interior" ||
+    valor === "volantes interiores"
+  ) {
+
+    return "volante-interior";
+
+  }
+
+
+  /* VOLANTES CENTRALES */
+
+  if (
+    valor === "volante central" ||
+    valor === "volantes centrales"
+  ) {
+
+    return "volante-central";
+
+  }
+
+
+  /* VOLANTES EXTREMOS */
+
+  if (
+    valor === "volante extremo" ||
+    valor === "volantes extremos"
+  ) {
+
+    return "volante-extremo";
+
+  }
+
+
+  /* CONTENCIONES */
+
+  if (
+    valor === "contencion" ||
+    valor === "contenciones"
+  ) {
+
+    return "contencion";
+
+  }
+
+
+  /* CENTRO DELANTEROS */
+
+  if (
+    valor === "centro delantero" ||
+    valor === "centro delanteros" ||
+    valor === "centros delanteros"
+  ) {
+
+    return "centro-delantero";
+
+  }
+
+
+  /*
+    Si aparece una posición nueva
+    que todavía no tenemos registrada,
+    la convertimos en formato con guiones.
+  */
+
+  return valor.replace(
+    /\s+/g,
+    "-"
+  );
 
 }
-
 
 
 /* =========================================
@@ -590,7 +661,6 @@ function filtrarJugadoras(
       ".jugadora-card"
     );
 
-
   const botones =
     document.querySelectorAll(
       ".filtro-btn"
@@ -598,6 +668,7 @@ function filtrarJugadoras(
 
 
   botones.forEach(
+
     function(btn) {
 
       btn.classList.remove(
@@ -605,6 +676,7 @@ function filtrarJugadoras(
       );
 
     }
+
   );
 
 
@@ -618,6 +690,7 @@ function filtrarJugadoras(
 
 
   jugadoras.forEach(
+
     function(jugadora) {
 
       const posicionJugadora =
@@ -640,10 +713,10 @@ function filtrarJugadoras(
       }
 
     }
+
   );
 
 }
-
 
 
 /* =========================================
@@ -651,10 +724,13 @@ function filtrarJugadoras(
 ========================================= */
 
 document.addEventListener(
+
   "DOMContentLoaded",
+
   function() {
 
     cargarPlantilla();
 
   }
+
 );

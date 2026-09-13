@@ -2408,3 +2408,1985 @@ footer p {
   }
 
 }
+
+/* =========================================
+   ENCABEZADO NOSOTROS
+   MISMA ALTURA QUE PLANTILLA
+   ========================================= */
+
+.nosotros-encabezado {
+  min-height: 135px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nosotros-encabezado .plantilla-titulo h1 {
+  margin: 0;
+}
+
+
+/* TELÉFONO */
+
+@media (max-width: 700px) {
+
+  .nosotros-encabezado {
+    min-height: 100px;
+  }
+
+}
+
+/* =========================================
+   NOSOTROS - CONTENIDO GENERAL
+   ========================================= */
+
+.nosotros-pagina {
+  width: 100%;
+  background: #f4f6f9;
+}
+
+
+/* =========================================
+   NOSOTROS - INTRODUCCIÓN
+   ========================================= */
+
+.nosotros-intro {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 40px 60px;
+
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+/* =========================================
+   TEXTO INTRODUCCIÓN
+   ========================================= */
+
+.nosotros-intro-texto {
+  width: 100%;
+}
+
+
+.nosotros-mini-titulo {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #2538b8;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+.nosotros-intro-texto h2 {
+  margin: 0 0 24px;
+
+  color: #111827;
+
+  font-size: 40px;
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+
+.nosotros-intro-texto p {
+  max-width: 850px;
+
+  margin: 0 0 20px;
+
+  color: #374151;
+
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   FRASE DESTACADA
+   ========================================= */
+
+.nosotros-frase-destacada {
+  max-width: 850px;
+
+  margin-top: 30px;
+
+  padding: 22px 26px;
+
+  background: #ffffff;
+
+  border-left: 5px solid #2538b8;
+
+  border-radius: 0 14px 14px 0;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.06);
+}
+
+
+.nosotros-frase-destacada strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #2538b8;
+
+  font-size: 20px;
+}
+
+
+.nosotros-frase-destacada span {
+  display: block;
+
+  color: #374151;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   ESCUDO INTRODUCCIÓN
+   ========================================= */
+
+.nosotros-intro-logo {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.nosotros-intro-logo img {
+  width: 100%;
+  max-width: 250px;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+  .nosotros-intro {
+    padding: 45px 35px;
+
+    grid-template-columns: 1fr 0.55fr;
+
+    gap: 40px;
+  }
+
+
+  .nosotros-intro-texto h2 {
+    font-size: 38px;
+  }
+
+
+  .nosotros-intro-logo img {
+    max-width: 260px;
+  }
+
+}
+
+
+/* =========================================
+   TELÉFONO
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .nosotros-intro {
+    padding: 32px 20px;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .nosotros-mini-titulo {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .nosotros-intro-texto h2 {
+    margin-bottom: 20px;
+
+    font-size: 34px;
+
+    text-align: left;
+  }
+
+
+  .nosotros-intro-texto p {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+
+  .nosotros-frase-destacada {
+    margin-top: 22px;
+
+    padding: 18px 20px;
+  }
+
+
+  .nosotros-frase-destacada strong {
+    font-size: 18px;
+  }
+
+
+  .nosotros-frase-destacada span {
+    font-size: 15px;
+  }
+
+
+  .nosotros-intro-logo img {
+    max-width: 210px;
+  }
+
+}
+
+/* =========================================================
+   NOSOTROS - ACORDEÓN GENERAL
+   ========================================================= */
+
+.nosotros-acordeon {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding:
+    10px 60px
+    70px;
+}
+
+
+/* =========================================================
+   BLOQUE DESPLEGABLE
+   ========================================================= */
+
+.nosotros-bloque {
+  width: 100%;
+
+  margin-bottom: 16px;
+
+  background: #ffffff;
+
+  border:
+    2px solid
+    #d9e1ec;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 24px
+    rgba(15, 23, 42, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* BLOQUE ABIERTO */
+
+.nosotros-bloque[open] {
+  border-color: #2538b8;
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 56, 184, 0.10);
+}
+
+
+/* =========================================================
+   CABECERA DEL DESPLEGABLE
+   ========================================================= */
+
+.nosotros-bloque summary {
+  width: 100%;
+
+  min-height: 82px;
+
+  padding:
+    18px 26px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  background: #ffffff;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* QUITAR FLECHA NATIVA */
+
+.nosotros-bloque summary::-webkit-details-marker {
+  display: none;
+}
+
+
+.nosotros-bloque summary::marker {
+  display: none;
+}
+
+
+/* HOVER */
+
+.nosotros-bloque summary:hover {
+  background: #f3f5fb;
+}
+
+
+/* CABECERA CUANDO ESTÁ ABIERTO */
+
+.nosotros-bloque[open] summary {
+  background: #2538b8;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTENEDOR DEL NÚMERO + TÍTULO
+   ========================================================= */
+
+.nosotros-bloque summary > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   NÚMERO
+   ========================================================= */
+
+.acordeon-numero {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2538b8;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.nosotros-bloque[open]
+.acordeon-numero {
+  background: #ffffff;
+  color: #2538b8;
+}
+
+
+/* =========================================================
+   TÍTULO DEL ACORDEÓN
+   ========================================================= */
+
+.acordeon-titulo {
+  color: #172033;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.nosotros-bloque[open]
+.acordeon-titulo {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ICONO + / -
+   ========================================================= */
+
+.acordeon-icono {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    2px solid
+    #2538b8;
+
+  border-radius: 50%;
+
+  color: #2538b8;
+
+  font-size: 0;
+
+  font-weight: 400;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* SIGNO + */
+
+.acordeon-icono::before {
+  content: "+";
+
+  font-size: 28px;
+  line-height: 1;
+}
+
+
+/* SIGNO - CUANDO ABRE */
+
+.nosotros-bloque[open]
+.acordeon-icono {
+  background: #ffffff;
+  color: #2538b8;
+}
+
+.nosotros-bloque[open]
+.acordeon-icono::before {
+  content: "−";
+}
+
+/* =========================================================
+   CONTENIDO DEL ACORDEÓN
+   ========================================================= */
+
+.acordeon-contenido {
+  padding:
+    38px 42px
+    44px;
+
+  background: #ffffff;
+
+  animation:
+    aparecerAcordeon
+    0.25s ease;
+}
+
+
+@keyframes aparecerAcordeon {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TEXTOS DEL CONTENIDO
+   ========================================================= */
+
+.acordeon-contenido h2 {
+  margin:
+    0 0 24px;
+
+  color: #172033;
+
+  font-size: 36px;
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+
+.acordeon-contenido p {
+  max-width: 1050px;
+
+  margin:
+    0 0 18px;
+
+  color: #374151;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   TEXTO DESTACADO
+   ========================================================= */
+
+.texto-destacado {
+  max-width: 1050px;
+
+  margin:
+    26px 0 !important;
+
+  padding:
+    18px 22px;
+
+  background: #f3f5fb;
+
+  border-left:
+    5px solid
+    #2538b8;
+
+  border-radius:
+    0 12px
+    12px 0;
+
+  color:
+    #2538b8 !important;
+
+  font-size:
+    19px !important;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   LISTA DE CONCEPTOS
+   ========================================================= */
+
+.lista-conceptos {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin:
+    22px 0 28px;
+}
+
+
+.lista-conceptos span {
+  padding:
+    10px 16px;
+
+  background: #eef1fb;
+
+  border:
+    1px solid
+    #cdd5f5;
+
+  border-radius: 30px;
+
+  color: #2538b8;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   NUESTRO PROPÓSITO
+   ========================================================= */
+
+.proposito-grid {
+  width: 100%;
+
+  margin:
+    30px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 16px;
+}
+
+
+.proposito-card {
+  min-height: 180px;
+
+  padding:
+    24px 20px;
+
+  background: #f5f7fc;
+
+  border:
+    1px solid
+    #dce2f3;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.proposito-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(37, 56, 184, 0.10);
+}
+
+
+.proposito-card h3 {
+  margin:
+    0 0 12px;
+
+  color: #2538b8;
+
+  font-size: 19px;
+}
+
+
+.proposito-card p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   INSPIRACIONES
+   ========================================================= */
+
+.inspiraciones-grid {
+  width: 100%;
+
+  margin-top: 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+.inspiracion-card {
+  padding:
+    25px;
+
+  background: #f5f7fc;
+
+  border:
+    1px solid
+    #dce2f3;
+
+  border-radius: 16px;
+}
+
+
+.inspiracion-card h3 {
+  margin:
+    0 0 6px;
+
+  color: #172033;
+
+  font-size: 21px;
+}
+
+
+.inspiracion-card strong {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #2538b8;
+
+  font-size: 15px;
+}
+
+
+.inspiracion-card p {
+  margin-bottom: 14px;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+.inspiracion-card
+.frase-corta {
+  margin-bottom: 0;
+
+  color: #2538b8;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ADN UDA
+   ========================================================= */
+
+.adn-grid {
+  width: 100%;
+
+  margin:
+    30px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+
+.adn-card {
+  min-height: 155px;
+
+  padding:
+    22px;
+
+  background: #2538b8;
+  color: #ffffff;
+
+  border-radius: 16px;
+}
+
+
+.adn-card h3 {
+  margin:
+    0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+
+.adn-card p {
+  margin:
+    0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+.adn-card strong {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FRASE METODOLOGÍA
+   ========================================================= */
+
+.frase-metodologia {
+  max-width: 850px;
+
+  margin-top: 30px;
+
+  padding:
+    25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  background: #2538b8;
+
+  border-radius: 16px;
+
+  color: #ffffff;
+}
+
+
+.frase-metodologia strong {
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   CIERRE NOSOTROS
+   ========================================================= */
+
+.nosotros-cierre {
+  width: 100%;
+
+  padding:
+    65px 30px;
+
+  background: #2538b8;
+  color: #ffffff;
+
+  text-align: center;
+}
+
+
+.nosotros-cierre img {
+  width: 95px;
+
+  height: auto;
+
+  margin:
+    0 auto 22px;
+
+  display: block;
+}
+
+
+.nosotros-cierre p {
+  margin:
+    0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+}
+
+
+.nosotros-cierre h2 {
+  margin:
+    0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 42px;
+}
+
+
+.nosotros-cierre span {
+  display: block;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nosotros-acordeon {
+    padding:
+      10px 35px
+      60px;
+  }
+
+
+  .proposito-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .inspiraciones-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .adn-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .nosotros-acordeon {
+    padding:
+      5px 16px
+      45px;
+  }
+
+
+  .nosotros-bloque {
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+  }
+
+
+  .nosotros-bloque summary {
+    min-height: 68px;
+
+    padding:
+      12px 15px;
+
+    gap: 10px;
+  }
+
+
+  .nosotros-bloque
+  summary > div {
+    gap: 10px;
+
+    min-width: 0;
+  }
+
+
+  .acordeon-numero {
+    width: 38px;
+    height: 38px;
+
+    font-size: 12px;
+  }
+
+
+  .acordeon-titulo {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+
+  .acordeon-icono {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .acordeon-icono::before {
+    font-size: 23px;
+  }
+
+
+  .acordeon-contenido {
+    padding:
+      26px 20px
+      30px;
+  }
+
+
+  .acordeon-contenido h2 {
+    margin-bottom: 18px;
+
+    font-size: 28px;
+  }
+
+
+  .acordeon-contenido p {
+    margin-bottom: 15px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+
+  .texto-destacado {
+    margin:
+      20px 0 !important;
+
+    padding:
+      15px 17px;
+
+    font-size:
+      16px !important;
+  }
+
+
+  .lista-conceptos {
+    margin:
+      18px 0 22px;
+
+    gap: 8px;
+  }
+
+
+  .lista-conceptos span {
+    padding:
+      8px 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* PROPÓSITO */
+
+  .proposito-grid {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 10px;
+  }
+
+
+  .proposito-card {
+    min-height: 145px;
+
+    padding:
+      18px 12px;
+  }
+
+
+  .proposito-card h3 {
+    font-size: 16px;
+  }
+
+
+  .proposito-card p {
+    font-size: 12px;
+  }
+
+
+  /* INSPIRACIONES */
+
+  .inspiraciones-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+  }
+
+
+  .inspiracion-card {
+    padding: 20px;
+  }
+
+
+  .inspiracion-card h3 {
+    font-size: 18px;
+  }
+
+
+  /* ADN */
+
+  .adn-grid {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 10px;
+  }
+
+
+  .adn-card {
+    min-height: 135px;
+
+    padding: 17px;
+  }
+
+
+  .adn-card h3 {
+    font-size: 17px;
+  }
+
+
+  .adn-card p,
+  .adn-card strong {
+    font-size: 12px;
+  }
+
+
+  /* METODOLOGÍA */
+
+  .frase-metodologia {
+    padding: 20px;
+  }
+
+
+  .frase-metodologia strong {
+    font-size: 16px;
+  }
+
+
+  /* CIERRE */
+
+  .nosotros-cierre {
+    padding:
+      45px 20px;
+  }
+
+
+  .nosotros-cierre img {
+    width: 75px;
+  }
+
+
+  .nosotros-cierre h2 {
+    font-size: 32px;
+  }
+
+
+  .nosotros-cierre p {
+    font-size: 16px;
+  }
+
+
+  .nosotros-cierre span {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .acordeon-titulo {
+    font-size: 14px;
+  }
+
+
+  .proposito-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .adn-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .nosotros-cierre h2 {
+    font-size: 28px;
+  }
+
+}
+
+/* =========================================================
+   CABECERA UDA CON FONDO FOTOGRÁFICO
+   ========================================================= */
+
+.cabecera-uda {
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      rgba(22, 47, 157, 0.62),
+      rgba(22, 47, 157, 0.62)
+    ),
+    url("ALE_9570.JPG");
+
+  background-size:
+    cover;
+
+  background-position:
+    center 30%;
+
+  background-repeat:
+    no-repeat;
+
+  color:
+    #ffffff;
+
+}
+
+
+/* =========================================================
+   MENÚ SOBRE LA MISMA FOTOGRAFÍA
+   ========================================================= */
+
+.cabecera-uda .encabezado {
+
+  background:
+    transparent;
+
+}
+
+
+/* =========================================================
+   TÍTULO SOBRE LA MISMA FOTOGRAFÍA
+   ========================================================= */
+
+.cabecera-uda .plantilla-encabezado {
+
+  background:
+    transparent;
+
+  color:
+    #ffffff;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.cabecera-uda .plantilla-titulo h1 {
+
+  color:
+    #ffffff;
+
+  text-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================================
+   TEXTO ADICIONAL DEL ENCABEZADO
+   ========================================================= */
+
+.cabecera-uda .plantilla-etiqueta,
+.cabecera-uda .plantilla-titulo p {
+
+  color:
+    #ffffff;
+
+  text-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================================
+   MENÚ
+   ========================================================= */
+
+.cabecera-uda .menu a {
+
+  color:
+    #ffffff;
+
+  text-shadow:
+    0 2px 7px
+    rgba(0, 0, 0, 0.50);
+
+}
+
+
+/* =========================================================
+   TELÉFONO
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .cabecera-uda {
+
+    background-position:
+      center 25%;
+
+  }
+
+}
+
+/* =========================================================
+   POSICIÓN DEL TÍTULO - NOSOTROS
+   ========================================================= */
+
+.nosotros-encabezado .plantilla-titulo {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  padding-right: 120px;
+
+  text-align: right;
+}
+
+
+/* TELÉFONO */
+
+@media (max-width: 700px) {
+
+  .nosotros-encabezado .plantilla-titulo {
+    padding-right: 0;
+
+    text-align: center;
+  }
+
+}
+
+/* =========================================================
+   MENÚ FIJO DENTRO DEL ENCABEZADO
+   NO SEGUIR AL HACER SCROLL
+   ========================================================= */
+
+.cabecera-uda .encabezado {
+  position: relative;
+  top: auto;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   TÍTULO DEL ENCABEZADO HACIA LA DERECHA
+   ========================================================= */
+
+.cabecera-uda .encabezado-pagina .plantilla-titulo {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  padding-right: 120px;
+
+  text-align: right;
+}
+
+.cabecera-uda .encabezado-pagina .plantilla-titulo h1 {
+  width: 100%;
+  margin: 0;
+
+  text-align: right;
+}
+
+
+/* TELÉFONO */
+
+@media (max-width: 800px) {
+
+  .cabecera-uda .encabezado-pagina .plantilla-titulo {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .cabecera-uda .encabezado-pagina .plantilla-titulo h1 {
+    text-align: center;
+  }
+
+}
+
+/* =========================================================
+   PLANTILLA
+   MISMAS DIMENSIONES DEL ENCABEZADO DE NOSOTROS
+   ========================================================= */
+
+
+/* MISMA ALTURA DEL ÁREA DEL TÍTULO */
+
+.pagina-plantilla
+.encabezado-pagina {
+
+  width: 100%;
+
+  height: 135px;
+  min-height: 135px;
+
+  padding: 0 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+}
+
+
+/* MISMA POSICIÓN HORIZONTAL QUE NOSOTROS */
+
+.pagina-plantilla
+.encabezado-pagina
+.plantilla-titulo {
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  padding-right: 30px;
+
+  text-align: right;
+}
+
+/* TÍTULO + SUBTÍTULO COMO UN SOLO GRUPO */
+
+.pagina-plantilla
+.titulo-plantilla-grupo {
+
+  display: inline-block;
+
+  text-align: center;
+}
+
+
+/* TÍTULO */
+
+.pagina-plantilla
+.titulo-plantilla-grupo h1 {
+
+  width: auto;
+
+  margin: 0 0 8px;
+
+  text-align: center;
+}
+
+
+/* SUBTÍTULO */
+
+.pagina-plantilla
+.titulo-plantilla-grupo p {
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TELÉFONO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .pagina-plantilla
+  .encabezado-pagina {
+
+    height: 100px;
+    min-height: 100px;
+
+    padding: 0 18px;
+  }
+
+
+  .pagina-plantilla
+  .encabezado-pagina
+  .plantilla-titulo {
+
+    padding-right: 0;
+
+    text-align: center;
+  }
+
+}
+
+/* =========================================================
+   MÁS ESPACIO ENTRE BOTONES DEL MENÚ
+   SOLO EN PLANTILLA
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+  .pagina-plantilla
+  .cabecera-uda
+  .menu {
+    gap: 60px;
+  }
+
+}
+
+/* =========================================================
+   CONTACTO - ACERCAR CONTENIDO AL ENCABEZADO
+   ========================================================= */
+
+.pagina-contacto .contacto {
+  min-height: auto;
+
+  align-items: flex-start;
+
+  padding:
+    35px 30px 80px;
+}
+
+/* =========================================================
+   INICIO UDA - PORTADA PRINCIPAL
+   ========================================================= */
+
+.pagina-inicio .hero-uda {
+
+  min-height: 620px;
+
+  padding:
+    65px 80px;
+
+  background:
+    #2538b8;
+
+  color:
+    #ffffff;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+}
+
+
+/* CONTENEDOR */
+
+.pagina-inicio
+.hero-uda
+.hero-contenido {
+
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.pagina-inicio
+.hero-uda
+.hero-texto {
+
+  width: 100%;
+}
+
+
+/* TEXTO PEQUEÑO */
+
+.pagina-inicio
+.hero-mini-titulo {
+
+  margin:
+    0 0 20px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    15px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    4px;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.pagina-inicio
+.hero-uda
+.hero-texto h1 {
+
+  margin:
+    0 0 30px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    58px;
+
+  line-height:
+    1.05;
+
+  font-weight:
+    800;
+}
+
+
+/* FRASE DESTACADA */
+
+.pagina-inicio
+.hero-uda
+.hero-texto h1 span {
+
+  display:
+    block;
+
+  color:
+    #ffc400;
+}
+
+
+/* DESCRIPCIÓN */
+
+.pagina-inicio
+.hero-descripcion-uda {
+
+  max-width:
+    680px;
+
+  margin:
+    0 0 12px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.pagina-inicio
+.hero-botones {
+
+  margin-top:
+    35px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    16px;
+
+  flex-wrap:
+    wrap;
+}
+
+
+.pagina-inicio
+.hero-botones
+.boton-hero {
+
+  margin:
+    0;
+
+  padding:
+    15px 26px;
+
+  border-radius:
+    10px;
+
+  font-size:
+    16px;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.pagina-inicio
+.boton-hero-principal {
+
+  background:
+    #ffffff;
+
+  color:
+    #2538b8;
+}
+
+
+/* BOTÓN SECUNDARIO */
+
+.pagina-inicio
+.boton-hero-secundario {
+
+  background:
+    transparent;
+
+  color:
+    #ffffff;
+
+  border:
+    2px solid #ffffff;
+}
+
+
+.pagina-inicio
+.hero-botones
+.boton-hero:hover {
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   ESCUDO GRANDE
+   ========================================================= */
+
+.pagina-inicio
+.hero-escudo-uda {
+
+  width:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+.pagina-inicio
+.hero-escudo-uda img {
+
+  width:
+    100%;
+
+  max-width:
+    520px;
+
+  height:
+    auto;
+
+  display:
+    block;
+
+  object-fit:
+    contain;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .pagina-inicio
+  .hero-uda {
+
+    padding:
+      55px 40px;
+  }
+
+
+  .pagina-inicio
+  .hero-uda
+  .hero-contenido {
+
+    grid-template-columns:
+      1fr 0.75fr;
+
+    gap:
+      40px;
+  }
+
+
+  .pagina-inicio
+  .hero-uda
+  .hero-texto h1 {
+
+    font-size:
+      46px;
+  }
+
+
+  .pagina-inicio
+  .hero-escudo-uda img {
+
+    max-width:
+      400px;
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .pagina-inicio
+  .hero-uda {
+
+    min-height:
+      auto;
+
+    padding:
+      45px 20px;
+  }
+
+
+  .pagina-inicio
+  .hero-uda
+  .hero-contenido {
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    gap:
+      35px;
+
+    text-align:
+      center;
+  }
+
+
+  .pagina-inicio
+  .hero-uda
+  .hero-texto {
+
+    width:
+      100%;
+
+    text-align:
+      center;
+  }
+
+
+  .pagina-inicio
+  .hero-mini-titulo {
+
+    font-size:
+      12px;
+
+    letter-spacing:
+      3px;
+  }
+
+
+  .pagina-inicio
+  .hero-uda
+  .hero-texto h1 {
+
+    font-size:
+      38px;
+
+    line-height:
+      1.08;
+  }
+
+
+  .pagina-inicio
+  .hero-descripcion-uda {
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+
+    font-size:
+      16px;
+  }
+
+
+  .pagina-inicio
+  .hero-botones {
+
+    justify-content:
+      center;
+  }
+
+
+  .pagina-inicio
+  .hero-escudo-uda img {
+
+    max-width:
+      280px;
+  }
+
+}

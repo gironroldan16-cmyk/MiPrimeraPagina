@@ -22,22 +22,31 @@
 </head>
 
 
-<body>
+<body class="pagina-plantilla">
 
+  <!-- =====================================================
+     ENCABEZADO UDA
+     ===================================================== -->
 
-  <!-- =========================
-       MENÚ
-  ========================== -->
+<div class="cabecera-uda">
+
 
   <header class="encabezado">
 
-   <div class="logo">
-  <img
-    src="imagenes/Portada.png"
-    alt="UDA"
-    class="logo-uda"
-  >
-</div>
+    <div class="logo">
+
+      <a href="index.html">
+
+        <img
+          src="imagenes/Portada.png"
+          alt="Logo UDA"
+          class="logo-uda"
+        >
+
+      </a>
+
+    </div>
+
 
     <nav class="menu">
 
@@ -63,26 +72,29 @@
 
 
 
-  <!-- =========================
-       ENCABEZADO PLANTILLA
-  ========================== -->
+  <section
+    class="plantilla-encabezado encabezado-pagina"
+  >
 
-  <section class="plantilla-encabezado">
+    <div class="plantilla-titulo">
 
-  <div class="plantilla-titulo">
+      <div class="titulo-plantilla-grupo">
 
-    <h1>
-      Nuestra Plantilla
-    </h1>
+        <h1>
+          Nuestra Plantilla
+        </h1>
 
-    <p>
-      Conoce a nuestro equipo.
-    </p>
+        <p>
+          Conoce a nuestro equipo.
+        </p>
 
-  </div>
+      </div>
 
-</section>
+    </div>
 
+  </section>
+
+</div>
 
   <!-- =========================
        PLANTILLA
@@ -99,70 +111,82 @@
 
       <div class="filtros-plantilla">
 
-  <button
-    class="filtro-btn activo"
-    onclick="filtrarJugadoras('todas', this)"
-  >
-    Todos
-  </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('portero', this)"
-  >
-    Porteros
-  </button>
+        <button
+          class="filtro-btn activo"
+          onclick="filtrarJugadoras('todas', this)"
+        >
+          Todos
+        </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('defensa-lateral', this)"
-  >
-    Defensas Laterales
-  </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('defensa-central', this)"
-  >
-    Defensas Centrales
-  </button>
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('portero', this)"
+        >
+          Porteros
+        </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('volante-interior', this)"
-  >
-    Volantes Interiores
-  </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('volante-central', this)"
-  >
-    Volantes Centrales
-  </button>
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('defensa-lateral', this)"
+        >
+          Defensas Laterales
+        </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('volante-extremo', this)"
-  >
-    Volantes Extremos
-  </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('contencion', this)"
-  >
-    Contenciones
-  </button>
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('defensa-central', this)"
+        >
+          Defensas Centrales
+        </button>
 
-  <button
-    class="filtro-btn"
-    onclick="filtrarJugadoras('centro-delantero', this)"
-  >
-    Centro Delanteros
-  </button>
 
-</div>
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('volante-interior', this)"
+        >
+          Volantes Interiores
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('volante-central', this)"
+        >
+          Volantes Centrales
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('volante-extremo', this)"
+        >
+          Volantes Extremos
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('contencion', this)"
+        >
+          Contenciones
+        </button>
+
+
+        <button
+          class="filtro-btn"
+          onclick="filtrarJugadoras('centro-delantero', this)"
+        >
+          Centro Delanteros
+        </button>
+
+
+      </div>
+
+
 
       <!-- =========================
            ESTADO DE CARGA
@@ -207,10 +231,7 @@
 
   </footer>
 
-
-
   <script src="script.js"></script>
-
 
 </body>
 

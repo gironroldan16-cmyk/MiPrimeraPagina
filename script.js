@@ -2,7 +2,7 @@ let formularioEnviado = false;
 
 
 /* =========================================
-   URL DEL BACKEND DE PLANTILLA
+   URL DEL BACKEND
 ========================================= */
 
 const URL_PLANTILLA =
@@ -36,9 +36,12 @@ function prepararEnvio() {
     );
 
   if (mensajeFormulario) {
+
     mensajeFormulario.textContent =
       "Enviando mensaje...";
+
   }
+
 }
 
 
@@ -82,11 +85,12 @@ function confirmarEnvio() {
   formulario.reset();
 
   formularioEnviado = false;
+
 }
 
 
 /* =========================================
-   CARGAR PLANTILLA DESDE GOOGLE SHEETS
+   CARGAR PLANTILLA
 ========================================= */
 
 function cargarPlantilla() {
@@ -111,14 +115,11 @@ function cargarPlantilla() {
     );
 
   if (estado) {
+
     estado.textContent =
       "Cargando plantilla...";
-  }
 
-  /*
-    Creamos un script temporal
-    para consultar Apps Script.
-  */
+  }
 
   const script =
     document.createElement(
@@ -151,10 +152,12 @@ function cargarPlantilla() {
 
 
 /* =========================================
-   RECIBIR DATOS DE GOOGLE SHEETS
+   RECIBIR PLANTILLA
 ========================================= */
 
-function recibirPlantilla(respuesta) {
+function recibirPlantilla(
+  respuesta
+) {
 
   const grid =
     document.getElementById(
@@ -183,6 +186,7 @@ function recibirPlantilla(respuesta) {
     }
 
     return;
+
   }
 
   const jugadores =
@@ -190,7 +194,9 @@ function recibirPlantilla(respuesta) {
 
   grid.innerHTML = "";
 
-  if (jugadores.length === 0) {
+  if (
+    jugadores.length === 0
+  ) {
 
     if (estado) {
 
@@ -200,10 +206,10 @@ function recibirPlantilla(respuesta) {
     }
 
     return;
+
   }
 
   jugadores.forEach(
-
     function(jugador) {
 
       const tarjeta =
@@ -216,11 +222,12 @@ function recibirPlantilla(respuesta) {
       );
 
     }
-
   );
 
   if (estado) {
+
     estado.textContent = "";
+
   }
 
 }
@@ -242,12 +249,6 @@ function crearTarjetaJugador(
   tarjeta.className =
     "jugadora-card";
 
-
-  /*
-    Aquí tomamos la posición que viene
-    desde Google Sheets y la convertimos
-    en la categoría utilizada por los filtros.
-  */
 
   const posicionNormalizada =
     normalizarPosicion(
@@ -354,12 +355,6 @@ function crearTarjetaJugador(
   posicion.className =
     "posicion";
 
-  /*
-    Importante:
-    aquí mostramos exactamente el texto
-    que viene de Google Sheets.
-  */
-
   posicion.textContent =
     jugador.posicion;
 
@@ -382,8 +377,6 @@ function crearTarjetaJugador(
   );
 
 
-  /* ARMAR TARJETA */
-
   tarjeta.appendChild(
     contenedorFoto
   );
@@ -392,13 +385,14 @@ function crearTarjetaJugador(
     informacion
   );
 
+
   return tarjeta;
 
 }
 
 
 /* =========================================
-   PLACEHOLDER CUANDO NO HAY FOTO
+   PLACEHOLDER
 ========================================= */
 
 function crearPlaceholder() {
@@ -423,43 +417,100 @@ function crearPlaceholder() {
    CONVERTIR LINK DE GOOGLE DRIVE
 ========================================= */
 
-function convertirLinkDrive(url) {
+function convertirLinkDrive(
+  url
+) {
 
   if (!url) {
     return "";
   }
 
+
+  const texto =
+    String(url).trim();
+
+
+  let id = "";
+
+
   /*
-    Convierte:
+    Formato:
 
     https://drive.google.com/file/d/ID/view
-
-    en una URL apta para <img>
   */
 
-  const coincidencia =
-    url.match(
-      /\/file\/d\/([^/]+)/
+  let coincidencia =
+    texto.match(
+      /\/file\/d\/([^/?]+)/
     );
+
 
   if (coincidencia) {
 
-    const id =
+    id =
       coincidencia[1];
+
+  }
+
+
+  /*
+    Formatos:
+
+    https://drive.google.com/open?id=ID
+
+    https://drive.google.com/uc?id=ID
+  */
+
+  if (!id) {
+
+    coincidencia =
+      texto.match(
+        /[?&]id=([^&]+)/
+      );
+
+
+    if (coincidencia) {
+
+      id =
+        coincidencia[1];
+
+    }
+
+  }
+
+
+  /*
+    Si solo colocamos el ID.
+  */
+
+  if (
+    !id &&
+    /^[a-zA-Z0-9_-]+$/.test(
+      texto
+    )
+  ) {
+
+    id =
+      texto;
+
+  }
+
+
+  if (id) {
 
     return (
       "https://drive.google.com/thumbnail" +
       "?id=" +
-      id +
-      "&sz=w1000"
+      encodeURIComponent(id) +
+      "&sz=w1600"
     );
 
   }
 
-  return url;
+
+  return texto;
 
 }
-
 
 /* =========================================
    FORMATEAR DORSAL
@@ -474,7 +525,9 @@ function formatearDorsal(
     dorsal === undefined ||
     dorsal === ""
   ) {
+
     return "";
+
   }
 
   return String(
@@ -500,20 +553,15 @@ function normalizarTexto(
   }
 
   return String(texto)
-
     .toLowerCase()
-
     .trim()
-
     .normalize(
       "NFD"
     )
-
     .replace(
       /[\u0300-\u036f]/g,
       ""
     )
-
     .replace(
       /\s+/g,
       " "
@@ -536,8 +584,6 @@ function normalizarPosicion(
     );
 
 
-  /* PORTEROS */
-
   if (
     valor === "portero" ||
     valor === "porteros"
@@ -547,8 +593,6 @@ function normalizarPosicion(
 
   }
 
-
-  /* DEFENSAS LATERALES */
 
   if (
     valor === "defensa lateral" ||
@@ -560,8 +604,6 @@ function normalizarPosicion(
   }
 
 
-  /* DEFENSAS CENTRALES */
-
   if (
     valor === "defensa central" ||
     valor === "defensas centrales"
@@ -571,8 +613,6 @@ function normalizarPosicion(
 
   }
 
-
-  /* VOLANTES INTERIORES */
 
   if (
     valor === "volante interior" ||
@@ -584,8 +624,6 @@ function normalizarPosicion(
   }
 
 
-  /* VOLANTES CENTRALES */
-
   if (
     valor === "volante central" ||
     valor === "volantes centrales"
@@ -595,8 +633,6 @@ function normalizarPosicion(
 
   }
 
-
-  /* VOLANTES EXTREMOS */
 
   if (
     valor === "volante extremo" ||
@@ -608,8 +644,6 @@ function normalizarPosicion(
   }
 
 
-  /* CONTENCIONES */
-
   if (
     valor === "contencion" ||
     valor === "contenciones"
@@ -619,8 +653,6 @@ function normalizarPosicion(
 
   }
 
-
-  /* CENTRO DELANTEROS */
 
   if (
     valor === "centro delantero" ||
@@ -633,12 +665,6 @@ function normalizarPosicion(
   }
 
 
-  /*
-    Si aparece una posición nueva
-    que todavía no tenemos registrada,
-    la convertimos en formato con guiones.
-  */
-
   return valor.replace(
     /\s+/g,
     "-"
@@ -648,7 +674,7 @@ function normalizarPosicion(
 
 
 /* =========================================
-   FILTROS DE LA PLANTILLA
+   FILTROS DE PLANTILLA
 ========================================= */
 
 function filtrarJugadoras(
@@ -668,7 +694,6 @@ function filtrarJugadoras(
 
 
   botones.forEach(
-
     function(btn) {
 
       btn.classList.remove(
@@ -676,7 +701,6 @@ function filtrarJugadoras(
       );
 
     }
-
   );
 
 
@@ -690,12 +714,10 @@ function filtrarJugadoras(
 
 
   jugadoras.forEach(
-
     function(jugadora) {
 
       const posicionJugadora =
         jugadora.dataset.posicion;
-
 
       if (
         posicion === "todas" ||
@@ -713,7 +735,2006 @@ function filtrarJugadoras(
       }
 
     }
+  );
 
+}
+
+
+/* =========================================================
+   FOTOS
+   ========================================================= */
+
+let fotosGaleriaActual = [];
+
+let indiceGaleriaActual = 0;
+
+let scriptGaleriaActual = null;
+
+
+/* =========================================================
+   CARGAR PARTIDOS
+   ========================================================= */
+
+function cargarFotos() {
+
+  const listaPartidos =
+    document.getElementById(
+      "listaPartidos"
+    );
+
+  /*
+    Si no estamos en fotos.html,
+    no hacemos nada.
+  */
+
+  if (!listaPartidos) {
+    return;
+  }
+
+
+  mostrarEstadoFotos(
+    "Galería de partidos",
+    "Cargando partidos..."
+  );
+
+
+  const script =
+    document.createElement(
+      "script"
+    );
+
+
+  script.src =
+    URL_PLANTILLA +
+    "?tipo=fotos" +
+    "&callback=recibirFotos" +
+    "&t=" +
+    Date.now();
+
+
+  script.onerror =
+    function() {
+
+      mostrarEstadoFotos(
+        "Galería de partidos",
+        "No fue posible cargar los partidos."
+      );
+
+    };
+
+
+  document.body.appendChild(
+    script
+  );
+
+}
+
+
+/* =========================================================
+   RECIBIR PARTIDOS
+   ========================================================= */
+
+function recibirFotos(
+  respuesta
+) {
+
+  const listaPartidos =
+    document.getElementById(
+      "listaPartidos"
+    );
+
+
+  if (!listaPartidos) {
+    return;
+  }
+
+
+  if (
+    !respuesta ||
+    respuesta.ok !== true
+  ) {
+
+    mostrarEstadoFotos(
+      "Galería de partidos",
+      "No fue posible cargar los partidos."
+    );
+
+    return;
+
+  }
+
+
+  const partidos =
+    respuesta.partidos || [];
+
+
+  if (
+    partidos.length === 0
+  ) {
+
+    mostrarEstadoFotos(
+      "Galería de partidos",
+      "Muy pronto podrás encontrar aquí las fotografías de cada encuentro de UDA."
+    );
+
+    return;
+
+  }
+
+
+  listaPartidos.innerHTML = "";
+
+
+  const grid =
+    document.createElement(
+      "div"
+    );
+
+  grid.className =
+    "grid-partidos";
+
+
+  partidos.forEach(
+    function(partido) {
+
+      const tarjeta =
+        crearTarjetaPartido(
+          partido
+        );
+
+      grid.appendChild(
+        tarjeta
+      );
+
+    }
+  );
+
+
+  listaPartidos.appendChild(
+    grid
+  );
+
+}
+
+
+/* =========================================================
+   CREAR TARJETA DE PARTIDO
+   ========================================================= */
+
+   function crearTarjetaPartido(
+  partido
+) {
+
+  const tarjeta =
+    document.createElement(
+      "article"
+    );
+
+
+  tarjeta.className =
+    "partido-card";
+
+
+
+  /* =====================================================
+     PORTADA
+     ===================================================== */
+
+  const portada =
+    document.createElement(
+      "div"
+    );
+
+
+  portada.className =
+    "partido-portada";
+
+
+  const imagen =
+    document.createElement(
+      "img"
+    );
+
+
+  const portadaConvertida =
+    convertirLinkDrive(
+      partido.portada
+    );
+
+
+  imagen.src =
+    portadaConvertida ||
+    "imagenes/Portada.png";
+
+
+  imagen.alt =
+    partido.partido ||
+    "Partido UDA";
+
+
+  imagen.onerror =
+    function() {
+
+      if (
+        imagen.getAttribute(
+          "data-fallback"
+        ) === "si"
+      ) {
+
+        return;
+
+      }
+
+
+      console.log(
+        "No se pudo cargar la portada:",
+        portadaConvertida
+      );
+
+
+      imagen.setAttribute(
+        "data-fallback",
+        "si"
+      );
+
+
+      imagen.src =
+        "imagenes/Portada.png";
+
+    };
+
+
+  portada.appendChild(
+    imagen
+  );
+
+
+
+  /* =====================================================
+     INFORMACIÓN
+     ===================================================== */
+
+  const informacion =
+    document.createElement(
+      "div"
+    );
+
+
+  informacion.className =
+    "partido-info";
+
+
+
+  /* FECHA */
+
+  const fecha =
+    document.createElement(
+      "span"
+    );
+
+
+  fecha.className =
+    "partido-fecha";
+
+
+  fecha.textContent =
+    formatearFechaPartido(
+      partido.fecha
+    );
+
+
+
+  /* JORNADA */
+
+  const jornada =
+    document.createElement(
+      "span"
+    );
+
+
+  jornada.className =
+    "partido-jornada";
+
+
+  jornada.textContent =
+    partido.jornada ||
+    "";
+
+
+
+  /* TÍTULO */
+
+  const titulo =
+    document.createElement(
+      "h3"
+    );
+
+
+  titulo.textContent =
+    partido.partido ||
+    "Partido UDA";
+
+
+
+  /* DESCRIPCIÓN */
+
+  const descripcion =
+    document.createElement(
+      "p"
+    );
+
+
+  descripcion.textContent =
+    partido.descripcion ||
+    "Revive los mejores momentos de este encuentro.";
+
+
+
+  /* BOTÓN */
+
+  const boton =
+    document.createElement(
+      "button"
+    );
+
+
+  boton.className =
+    "partido-boton";
+
+
+  boton.type =
+    "button";
+
+
+  boton.textContent =
+    "Ver fotos";
+
+
+  boton.addEventListener(
+
+    "click",
+
+    function() {
+
+      abrirFotosPartido(
+        partido
+      );
+
+    }
+
+  );
+
+
+
+  /* =====================================================
+     ARMAR INFORMACIÓN
+     ===================================================== */
+
+  informacion.appendChild(
+    fecha
+  );
+
+
+  if (
+    partido.jornada &&
+    String(
+      partido.jornada
+    ).trim() !== ""
+  ) {
+
+    informacion.appendChild(
+      jornada
+    );
+
+  }
+
+
+  informacion.appendChild(
+    titulo
+  );
+
+
+  informacion.appendChild(
+    descripcion
+  );
+
+
+  informacion.appendChild(
+    boton
+  );
+
+
+
+  /* =====================================================
+     ARMAR TARJETA
+     ===================================================== */
+
+  tarjeta.appendChild(
+    portada
+  );
+
+
+  tarjeta.appendChild(
+    informacion
+  );
+
+
+  return tarjeta;
+
+}
+
+/* =========================================================
+   ABRIR GALERÍA DEL PARTIDO
+   ========================================================= */
+
+function abrirFotosPartido(
+  partido
+) {
+
+  if (
+    !partido ||
+    !partido.id
+  ) {
+
+    return;
+
+  }
+
+
+  mostrarModalGaleriaCarga(
+    partido
+  );
+
+
+  limpiarScriptGaleria();
+
+
+  const script =
+    document.createElement(
+      "script"
+    );
+
+
+  scriptGaleriaActual =
+    script;
+
+
+  script.src =
+    URL_PLANTILLA +
+    "?tipo=galeria" +
+    "&id=" +
+    encodeURIComponent(
+      partido.id
+    ) +
+    "&callback=recibirGaleriaPartido" +
+    "&t=" +
+    Date.now();
+
+
+  script.onerror =
+    function() {
+
+      limpiarScriptGaleria();
+
+      mostrarErrorGaleria(
+        "No fue posible cargar las fotografías de este partido."
+      );
+
+    };
+
+
+  document.body.appendChild(
+    script
+  );
+
+}
+
+
+/* =========================================================
+   RECIBIR GALERÍA
+   ========================================================= */
+
+function recibirGaleriaPartido(
+  respuesta
+) {
+
+  limpiarScriptGaleria();
+
+
+  if (
+    !respuesta ||
+    respuesta.ok !== true
+  ) {
+
+    mostrarErrorGaleria(
+      respuesta &&
+      respuesta.mensaje
+        ? respuesta.mensaje
+        : "No fue posible cargar las fotografías de este partido."
+    );
+
+    return;
+
+  }
+
+
+  const partido =
+    respuesta.partido || {};
+
+
+  const fotos =
+    respuesta.fotos || [];
+
+
+  const titulo =
+    document.getElementById(
+      "galeriaTitulo"
+    );
+
+
+  const fecha =
+    document.getElementById(
+      "galeriaFecha"
+    );
+
+
+  const jornada =
+    document.getElementById(
+      "galeriaJornada"
+    );
+
+
+  const estado =
+    document.getElementById(
+      "galeriaEstado"
+    );
+
+
+  const grid =
+    document.getElementById(
+      "galeriaGrid"
+    );
+
+
+  if (
+    !titulo ||
+    !fecha ||
+    !jornada ||
+    !estado ||
+    !grid
+  ) {
+
+    return;
+
+  }
+
+
+  titulo.textContent =
+    partido.partido ||
+    "Galería UDA";
+
+
+  fecha.textContent =
+    formatearFechaPartido(
+      partido.fecha
+    );
+
+
+  /* JORNADA */
+
+  if (
+    partido.jornada &&
+    String(
+      partido.jornada
+    ).trim() !== ""
+  ) {
+
+    jornada.textContent =
+      partido.jornada;
+
+    jornada.style.display =
+      "inline-flex";
+
+  } else {
+
+    jornada.textContent =
+      "";
+
+    jornada.style.display =
+      "none";
+
+  }
+
+
+  grid.innerHTML = "";
+
+
+  if (
+    fotos.length === 0
+  ) {
+
+    estado.classList.remove(
+      "galeria-estado-error"
+    );
+
+    estado.textContent =
+      "Todavía no hay fotografías disponibles para este encuentro.";
+
+    estado.style.display =
+      "flex";
+
+    fotosGaleriaActual = [];
+
+    return;
+
+  }
+
+
+  estado.style.display =
+    "none";
+
+
+  fotosGaleriaActual =
+    fotos;
+
+
+  fotos.forEach(
+
+    function(
+      foto,
+      indice
+    ) {
+
+      const boton =
+        document.createElement(
+          "button"
+        );
+
+
+      boton.type =
+        "button";
+
+
+      boton.className =
+        "galeria-foto-item";
+
+
+      boton.setAttribute(
+        "aria-label",
+        "Abrir fotografía " +
+        (indice + 1)
+      );
+
+
+      const imagen =
+        document.createElement(
+          "img"
+        );
+
+
+      imagen.src =
+        foto.miniatura;
+
+
+      imagen.alt =
+        foto.nombre ||
+        "Fotografía del partido";
+
+
+      imagen.loading =
+        "lazy";
+
+
+      imagen.onerror =
+        function() {
+
+          boton.classList.add(
+            "galeria-foto-error"
+          );
+
+
+          imagen.style.display =
+            "none";
+
+
+          if (
+            !boton.querySelector(
+              ".galeria-foto-error-texto"
+            )
+          ) {
+
+            const textoError =
+              document.createElement(
+                "span"
+              );
+
+
+            textoError.className =
+              "galeria-foto-error-texto";
+
+
+            textoError.textContent =
+              "Foto no disponible";
+
+
+            boton.appendChild(
+              textoError
+            );
+
+          }
+
+        };
+
+
+      boton.addEventListener(
+
+        "click",
+
+        function() {
+
+          abrirVisorFoto(
+            indice
+          );
+
+        }
+
+      );
+
+
+      boton.appendChild(
+        imagen
+      );
+
+
+      grid.appendChild(
+        boton
+      );
+
+    }
+
+  );
+
+}
+
+/* =========================================================
+   CREAR MODAL DE GALERÍA
+   ========================================================= */
+
+function crearModalGaleria() {
+
+  if (
+    document.getElementById(
+      "modalGaleria"
+    )
+  ) {
+
+    return;
+
+  }
+
+
+  const modal =
+    document.createElement(
+      "div"
+    );
+
+
+  modal.id =
+    "modalGaleria";
+
+
+  modal.className =
+    "galeria-modal";
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+
+  /* FONDO */
+
+  const fondo =
+    document.createElement(
+      "div"
+    );
+
+
+  fondo.className =
+    "galeria-modal-fondo";
+
+
+  fondo.addEventListener(
+
+    "click",
+
+    function() {
+
+      cerrarGaleriaPartido();
+
+    }
+
+  );
+
+
+
+  /* CONTENIDO */
+
+  const contenido =
+    document.createElement(
+      "section"
+    );
+
+
+  contenido.className =
+    "galeria-modal-contenido";
+
+
+  contenido.setAttribute(
+    "role",
+    "dialog"
+  );
+
+
+  contenido.setAttribute(
+    "aria-modal",
+    "true"
+  );
+
+
+  contenido.setAttribute(
+    "aria-labelledby",
+    "galeriaTitulo"
+  );
+
+
+
+  /* CABECERA */
+
+  const cabecera =
+    document.createElement(
+      "header"
+    );
+
+
+  cabecera.className =
+    "galeria-modal-cabecera";
+
+
+
+  const textos =
+    document.createElement(
+      "div"
+    );
+
+
+  textos.className =
+    "galeria-modal-textos";
+
+
+
+  /* ETIQUETA */
+
+  const etiqueta =
+    document.createElement(
+      "span"
+    );
+
+
+  etiqueta.className =
+    "galeria-modal-etiqueta";
+
+
+  etiqueta.textContent =
+    "GALERÍA DEL PARTIDO";
+
+
+
+  /* TÍTULO */
+
+  const titulo =
+    document.createElement(
+      "h2"
+    );
+
+
+  titulo.id =
+    "galeriaTitulo";
+
+
+  titulo.textContent =
+    "Galería UDA";
+
+
+
+  /* FECHA */
+
+  const fecha =
+    document.createElement(
+      "span"
+    );
+
+
+  fecha.id =
+    "galeriaFecha";
+
+
+  fecha.className =
+    "galeria-modal-fecha";
+
+
+
+  /* JORNADA */
+
+  const jornada =
+    document.createElement(
+      "span"
+    );
+
+
+  jornada.id =
+    "galeriaJornada";
+
+
+  jornada.className =
+    "galeria-modal-jornada";
+
+
+
+  /* BOTÓN CERRAR */
+
+  const cerrar =
+    document.createElement(
+      "button"
+    );
+
+
+  cerrar.type =
+    "button";
+
+
+  cerrar.className =
+    "galeria-cerrar";
+
+
+  cerrar.setAttribute(
+    "aria-label",
+    "Cerrar galería"
+  );
+
+
+  cerrar.textContent =
+    "×";
+
+
+  cerrar.addEventListener(
+
+    "click",
+
+    function() {
+
+      cerrarGaleriaPartido();
+
+    }
+
+  );
+
+
+
+  /* ARMAR TEXTOS */
+
+  textos.appendChild(
+    etiqueta
+  );
+
+
+  textos.appendChild(
+    titulo
+  );
+
+
+  textos.appendChild(
+    fecha
+  );
+
+
+  textos.appendChild(
+    jornada
+  );
+
+
+
+  cabecera.appendChild(
+    textos
+  );
+
+
+  cabecera.appendChild(
+    cerrar
+  );
+
+
+
+  /* CUERPO */
+
+  const cuerpo =
+    document.createElement(
+      "div"
+    );
+
+
+  cuerpo.className =
+    "galeria-modal-cuerpo";
+
+
+
+  const estado =
+    document.createElement(
+      "div"
+    );
+
+
+  estado.id =
+    "galeriaEstado";
+
+
+  estado.className =
+    "galeria-estado";
+
+
+
+  const grid =
+    document.createElement(
+      "div"
+    );
+
+
+  grid.id =
+    "galeriaGrid";
+
+
+  grid.className =
+    "galeria-grid";
+
+
+
+  cuerpo.appendChild(
+    estado
+  );
+
+
+  cuerpo.appendChild(
+    grid
+  );
+
+
+  contenido.appendChild(
+    cabecera
+  );
+
+
+  contenido.appendChild(
+    cuerpo
+  );
+
+
+  modal.appendChild(
+    fondo
+  );
+
+
+  modal.appendChild(
+    contenido
+  );
+
+
+  document.body.appendChild(
+    modal
+  );
+
+
+  crearVisorGaleria();
+
+}
+
+
+/* =========================================================
+   MOSTRAR MODAL CARGANDO
+   ========================================================= */
+
+function mostrarModalGaleriaCarga(
+  partido
+) {
+
+  crearModalGaleria();
+
+
+  const modal =
+    document.getElementById(
+      "modalGaleria"
+    );
+
+
+  const titulo =
+    document.getElementById(
+      "galeriaTitulo"
+    );
+
+
+  const fecha =
+    document.getElementById(
+      "galeriaFecha"
+    );
+
+
+  const jornada =
+    document.getElementById(
+      "galeriaJornada"
+    );
+
+
+  const estado =
+    document.getElementById(
+      "galeriaEstado"
+    );
+
+
+  const grid =
+    document.getElementById(
+      "galeriaGrid"
+    );
+
+
+  if (
+    !modal ||
+    !titulo ||
+    !fecha ||
+    !jornada ||
+    !estado ||
+    !grid
+  ) {
+
+    return;
+
+  }
+
+
+  titulo.textContent =
+    partido.partido ||
+    "Galería UDA";
+
+
+  fecha.textContent =
+    formatearFechaPartido(
+      partido.fecha
+    );
+
+
+  if (
+    partido.jornada &&
+    String(
+      partido.jornada
+    ).trim() !== ""
+  ) {
+
+    jornada.textContent =
+      partido.jornada;
+
+    jornada.style.display =
+      "inline-flex";
+
+  } else {
+
+    jornada.textContent =
+      "";
+
+    jornada.style.display =
+      "none";
+
+  }
+
+
+  estado.classList.remove(
+    "galeria-estado-error"
+  );
+
+
+  estado.textContent =
+    "Cargando fotografías...";
+
+
+  estado.style.display =
+    "flex";
+
+
+  grid.innerHTML = "";
+
+
+  fotosGaleriaActual = [];
+
+
+  modal.classList.add(
+    "galeria-modal-activa"
+  );
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.classList.add(
+    "galeria-abierta"
+  );
+
+}
+
+
+/* =========================================================
+   MOSTRAR ERROR DE GALERÍA
+   ========================================================= */
+
+function mostrarErrorGaleria(
+  mensaje
+) {
+
+  const estado =
+    document.getElementById(
+      "galeriaEstado"
+    );
+
+
+  const grid =
+    document.getElementById(
+      "galeriaGrid"
+    );
+
+
+  if (grid) {
+
+    grid.innerHTML = "";
+
+  }
+
+
+  if (estado) {
+
+    estado.classList.add(
+      "galeria-estado-error"
+    );
+
+    estado.textContent =
+      mensaje;
+
+    estado.style.display =
+      "flex";
+
+  }
+
+}
+
+
+/* =========================================================
+   CERRAR GALERÍA
+   ========================================================= */
+
+function cerrarGaleriaPartido() {
+
+  cerrarVisorFoto();
+
+
+  const modal =
+    document.getElementById(
+      "modalGaleria"
+    );
+
+
+  if (!modal) {
+    return;
+  }
+
+
+  modal.classList.remove(
+    "galeria-modal-activa"
+  );
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.classList.remove(
+    "galeria-abierta"
+  );
+
+
+  fotosGaleriaActual = [];
+
+
+  limpiarScriptGaleria();
+
+}
+
+
+/* =========================================================
+   LIMPIAR SCRIPT JSONP
+   ========================================================= */
+
+function limpiarScriptGaleria() {
+
+  if (
+    scriptGaleriaActual &&
+    scriptGaleriaActual.parentNode
+  ) {
+
+    scriptGaleriaActual.parentNode.removeChild(
+      scriptGaleriaActual
+    );
+
+  }
+
+
+  scriptGaleriaActual = null;
+
+}
+
+
+/* =========================================================
+   CREAR VISOR DE FOTOGRAFÍAS
+   ========================================================= */
+
+function crearVisorGaleria() {
+
+  if (
+    document.getElementById(
+      "visorGaleria"
+    )
+  ) {
+
+    return;
+
+  }
+
+
+  const visor =
+    document.createElement(
+      "div"
+    );
+
+  visor.id =
+    "visorGaleria";
+
+  visor.className =
+    "galeria-visor";
+
+  visor.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  const fondo =
+    document.createElement(
+      "div"
+    );
+
+  fondo.className =
+    "galeria-visor-fondo";
+
+
+  fondo.addEventListener(
+    "click",
+    function() {
+
+      cerrarVisorFoto();
+
+    }
+  );
+
+
+  const cerrar =
+    document.createElement(
+      "button"
+    );
+
+  cerrar.type =
+    "button";
+
+  cerrar.className =
+    "visor-cerrar";
+
+  cerrar.setAttribute(
+    "aria-label",
+    "Cerrar fotografía"
+  );
+
+  cerrar.textContent =
+    "×";
+
+
+  cerrar.addEventListener(
+    "click",
+    function() {
+
+      cerrarVisorFoto();
+
+    }
+  );
+
+
+  const anterior =
+    document.createElement(
+      "button"
+    );
+
+  anterior.type =
+    "button";
+
+  anterior.className =
+    "visor-anterior";
+
+  anterior.setAttribute(
+    "aria-label",
+    "Fotografía anterior"
+  );
+
+  anterior.textContent =
+    "‹";
+
+
+  anterior.addEventListener(
+    "click",
+    function() {
+
+      cambiarFotoGaleria(
+        -1
+      );
+
+    }
+  );
+
+
+  const siguiente =
+    document.createElement(
+      "button"
+    );
+
+  siguiente.type =
+    "button";
+
+  siguiente.className =
+    "visor-siguiente";
+
+  siguiente.setAttribute(
+    "aria-label",
+    "Fotografía siguiente"
+  );
+
+  siguiente.textContent =
+    "›";
+
+
+  siguiente.addEventListener(
+    "click",
+    function() {
+
+      cambiarFotoGaleria(
+        1
+      );
+
+    }
+  );
+
+
+  const contenido =
+    document.createElement(
+      "div"
+    );
+
+  contenido.className =
+    "visor-contenido";
+
+
+  const imagen =
+    document.createElement(
+      "img"
+    );
+
+  imagen.id =
+    "visorImagen";
+
+  imagen.alt =
+    "Fotografía del partido";
+
+
+  const contador =
+    document.createElement(
+      "div"
+    );
+
+  contador.id =
+    "visorContador";
+
+  contador.className =
+    "visor-contador";
+
+
+  contenido.appendChild(
+    imagen
+  );
+
+  contenido.appendChild(
+    contador
+  );
+
+
+  visor.appendChild(
+    fondo
+  );
+
+  visor.appendChild(
+    cerrar
+  );
+
+  visor.appendChild(
+    anterior
+  );
+
+  visor.appendChild(
+    contenido
+  );
+
+  visor.appendChild(
+    siguiente
+  );
+
+
+  document.body.appendChild(
+    visor
+  );
+
+}
+
+
+/* =========================================================
+   ABRIR FOTO GRANDE
+   ========================================================= */
+
+function abrirVisorFoto(
+  indice
+) {
+
+  if (
+    !fotosGaleriaActual.length
+  ) {
+
+    return;
+
+  }
+
+
+  indiceGaleriaActual =
+    indice;
+
+
+  actualizarVisorFoto();
+
+
+  const visor =
+    document.getElementById(
+      "visorGaleria"
+    );
+
+
+  if (!visor) {
+    return;
+  }
+
+
+  visor.classList.add(
+    "galeria-visor-activo"
+  );
+
+
+  visor.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+}
+
+
+/* =========================================================
+   CERRAR FOTO GRANDE
+   ========================================================= */
+
+function cerrarVisorFoto() {
+
+  const visor =
+    document.getElementById(
+      "visorGaleria"
+    );
+
+
+  if (!visor) {
+    return;
+  }
+
+
+  visor.classList.remove(
+    "galeria-visor-activo"
+  );
+
+
+  visor.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
+
+/* =========================================================
+   CAMBIAR FOTO
+   ========================================================= */
+
+function cambiarFotoGaleria(
+  direccion
+) {
+
+  if (
+    !fotosGaleriaActual.length
+  ) {
+
+    return;
+
+  }
+
+
+  indiceGaleriaActual =
+    (
+      indiceGaleriaActual +
+      direccion +
+      fotosGaleriaActual.length
+    ) %
+    fotosGaleriaActual.length;
+
+
+  actualizarVisorFoto();
+
+}
+
+
+/* =========================================================
+   ACTUALIZAR VISOR
+   ========================================================= */
+
+function actualizarVisorFoto() {
+
+  const foto =
+    fotosGaleriaActual[
+      indiceGaleriaActual
+    ];
+
+
+  const imagen =
+    document.getElementById(
+      "visorImagen"
+    );
+
+
+  const contador =
+    document.getElementById(
+      "visorContador"
+    );
+
+
+  if (
+    !foto ||
+    !imagen ||
+    !contador
+  ) {
+
+    return;
+
+  }
+
+
+  imagen.src =
+    foto.miniatura;
+
+
+  imagen.alt =
+    foto.nombre ||
+    "Fotografía del partido";
+
+
+  contador.textContent =
+    (indiceGaleriaActual + 1) +
+    " / " +
+    fotosGaleriaActual.length;
+
+}
+
+
+/* =========================================================
+   TECLADO DE GALERÍA
+   ========================================================= */
+
+function manejarTecladoGaleria(
+  evento
+) {
+
+  const visor =
+    document.getElementById(
+      "visorGaleria"
+    );
+
+
+  const modal =
+    document.getElementById(
+      "modalGaleria"
+    );
+
+
+  const visorActivo =
+    visor &&
+    visor.classList.contains(
+      "galeria-visor-activo"
+    );
+
+
+  const modalActivo =
+    modal &&
+    modal.classList.contains(
+      "galeria-modal-activa"
+    );
+
+
+  if (visorActivo) {
+
+    if (
+      evento.key === "Escape"
+    ) {
+
+      cerrarVisorFoto();
+
+    }
+
+
+    if (
+      evento.key === "ArrowLeft"
+    ) {
+
+      cambiarFotoGaleria(
+        -1
+      );
+
+    }
+
+
+    if (
+      evento.key === "ArrowRight"
+    ) {
+
+      cambiarFotoGaleria(
+        1
+      );
+
+    }
+
+
+    return;
+
+  }
+
+
+  if (
+    modalActivo &&
+    evento.key === "Escape"
+  ) {
+
+    cerrarGaleriaPartido();
+
+  }
+
+}
+
+
+/* =========================================================
+   FORMATEAR FECHA DEL PARTIDO
+   ========================================================= */
+
+function formatearFechaPartido(
+  fecha
+) {
+
+  if (!fecha) {
+
+    return "FECHA POR CONFIRMAR";
+
+  }
+
+
+  const texto =
+    String(fecha)
+      .trim();
+
+
+  const partes =
+    texto.split(
+      /[\/\-]/
+    );
+
+
+  if (
+    partes.length !== 3
+  ) {
+
+    return texto.toUpperCase();
+
+  }
+
+
+  const dia =
+    Number(
+      partes[0]
+    );
+
+
+  const mes =
+    Number(
+      partes[1]
+    );
+
+
+  const anio =
+    Number(
+      partes[2]
+    );
+
+
+  if (
+    !dia ||
+    !mes ||
+    !anio ||
+    mes < 1 ||
+    mes > 12
+  ) {
+
+    return texto.toUpperCase();
+
+  }
+
+
+  const meses = [
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE"
+  ];
+
+
+  return (
+    String(dia).padStart(
+      2,
+      "0"
+    ) +
+    " " +
+    meses[
+      mes - 1
+    ] +
+    " " +
+    anio
+  );
+
+}
+
+
+/* =========================================================
+   ESTADO DE LA PÁGINA FOTOS
+   ========================================================= */
+
+function mostrarEstadoFotos(
+  titulo,
+  mensaje
+) {
+
+  const listaPartidos =
+    document.getElementById(
+      "listaPartidos"
+    );
+
+
+  if (!listaPartidos) {
+    return;
+  }
+
+
+  listaPartidos.innerHTML = "";
+
+
+  const contenedor =
+    document.createElement(
+      "div"
+    );
+
+  contenedor.className =
+    "partidos-vacio";
+
+
+  const escudo =
+    document.createElement(
+      "div"
+    );
+
+  escudo.className =
+    "partidos-vacio-escudo";
+
+
+  const imagen =
+    document.createElement(
+      "img"
+    );
+
+  imagen.src =
+    "imagenes/Portada.png";
+
+  imagen.alt =
+    "Escudo UDA";
+
+
+  escudo.appendChild(
+    imagen
+  );
+
+
+  const encabezado =
+    document.createElement(
+      "h3"
+    );
+
+  encabezado.textContent =
+    titulo;
+
+
+  const texto =
+    document.createElement(
+      "p"
+    );
+
+  texto.textContent =
+    mensaje;
+
+
+  contenedor.appendChild(
+    escudo
+  );
+
+  contenedor.appendChild(
+    encabezado
+  );
+
+  contenedor.appendChild(
+    texto
+  );
+
+
+  listaPartidos.appendChild(
+    contenedor
   );
 
 }
@@ -724,13 +2745,18 @@ function filtrarJugadoras(
 ========================================= */
 
 document.addEventListener(
-
   "DOMContentLoaded",
-
   function() {
 
     cargarPlantilla();
 
-  }
+    cargarFotos();
 
+
+    document.addEventListener(
+      "keydown",
+      manejarTecladoGaleria
+    );
+
+  }
 );

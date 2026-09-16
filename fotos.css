@@ -1,0 +1,1805 @@
+/* =========================================================
+   FOTOS UDA
+   ========================================================= */
+
+
+/* =========================================================
+   CONTENIDO GENERAL
+   ========================================================= */
+
+.pagina-fotos
+.partidos-pagina {
+
+  width: 100%;
+
+  min-height: 600px;
+
+  padding:
+    45px 60px
+    80px;
+
+  background:
+    #f4f6f9;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+   ========================================================= */
+
+.pagina-fotos
+.partidos-intro {
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin:
+    0 auto
+    45px;
+
+  text-align:
+    center;
+}
+
+
+.pagina-fotos
+.partidos-mini-titulo {
+
+  display:
+    block;
+
+  margin-bottom:
+    12px;
+
+  color:
+    #2538b8;
+
+  font-size:
+    14px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    3px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.pagina-fotos
+.partidos-intro h2 {
+
+  margin:
+    0 0
+    16px;
+
+  color:
+    #111827;
+
+  font-size:
+    46px;
+
+  line-height:
+    1.1;
+
+  font-weight:
+    800;
+}
+
+
+.pagina-fotos
+.partidos-intro p {
+
+  max-width:
+    780px;
+
+  margin:
+    0 auto;
+
+  color:
+    #4b5563;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
+.pagina-fotos
+.lista-partidos {
+
+  width:
+    100%;
+
+  max-width:
+    1500px;
+
+  margin:
+    0 auto;
+}
+
+
+/* =========================================================
+   GRID DE PARTIDOS
+   ========================================================= */
+
+.pagina-fotos
+.grid-partidos {
+
+  width:
+    100%;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    28px;
+}
+
+
+/* =========================================================
+   TARJETA DE PARTIDO
+   ========================================================= */
+
+.pagina-fotos
+.partido-card {
+
+  width:
+    100%;
+
+  background:
+    #ffffff;
+
+  border:
+    2px solid
+    #dce2f3;
+
+  border-radius:
+    22px;
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 10px 30px
+    rgba(15, 23, 42, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.pagina-fotos
+.partido-card:hover {
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    #2538b8;
+
+  box-shadow:
+    0 18px 40px
+    rgba(37, 56, 184, 0.13);
+}
+
+
+/* =========================================================
+   PORTADA DEL PARTIDO
+   ========================================================= */
+
+.pagina-fotos
+.partido-portada {
+
+  width:
+    100%;
+
+  height:
+    280px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    hidden;
+
+  background:
+    #eef1f7;
+}
+
+
+.pagina-fotos
+.partido-portada img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  padding:
+    0;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  transition:
+    transform 0.35s ease;
+}
+
+.pagina-fotos
+.partido-card:hover
+.partido-portada img {
+
+  transform:
+    scale(1.05);
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL PARTIDO
+   ========================================================= */
+
+.pagina-fotos
+.partido-info {
+
+  padding:
+    28px;
+}
+
+
+.pagina-fotos
+.partido-fecha {
+
+  display:
+    block;
+
+  margin-bottom:
+    10px;
+
+  color:
+    #2538b8;
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    1.8px;
+
+  text-transform:
+    uppercase;
+}
+
+.pagina-fotos
+.partido-jornada {
+
+  display:
+    block;
+
+  width:
+    fit-content;
+
+  margin:
+    0 0
+    12px;
+
+  padding:
+    6px 12px;
+
+  background:
+    #eef1fb;
+
+  border:
+    1px solid
+    #ccd5f5;
+
+  border-radius:
+    20px;
+
+  color:
+    #2538b8;
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    1px;
+
+  text-transform:
+    uppercase;
+}
+
+.pagina-fotos
+.partido-info h3 {
+
+  margin:
+    0 0
+    12px;
+
+  color:
+    #172033;
+
+  font-size:
+    25px;
+
+  line-height:
+    1.2;
+
+  font-weight:
+    800;
+}
+
+
+.pagina-fotos
+.partido-info p {
+
+  margin:
+    0;
+
+  color:
+    #6b7280;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================================
+   BOTÓN VER FOTOS
+   ========================================================= */
+
+.pagina-fotos
+.partido-boton {
+
+  width:
+    100%;
+
+  margin-top:
+    24px;
+
+  padding:
+    14px 22px;
+
+  border:
+    2px solid
+    #2538b8;
+
+  border-radius:
+    12px;
+
+  background:
+    #2538b8;
+
+  color:
+    #ffffff;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    16px;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.pagina-fotos
+.partido-boton:hover {
+
+  background:
+    #ffffff;
+
+  color:
+    #2538b8;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   ESTADO VACÍO / CARGA
+   ========================================================= */
+
+.pagina-fotos
+.partidos-vacio {
+
+  width:
+    100%;
+
+  max-width:
+    700px;
+
+  margin:
+    20px auto 0;
+
+  padding:
+    45px 35px;
+
+  background:
+    #ffffff;
+
+  border:
+    2px solid
+    #dce2f3;
+
+  border-radius:
+    20px;
+
+  text-align:
+    center;
+
+  box-shadow:
+    0 10px 30px
+    rgba(15, 23, 42, 0.06);
+}
+
+
+.pagina-fotos
+.partidos-vacio-escudo img {
+
+  width:
+    100px;
+
+  height:
+    auto;
+
+  margin:
+    0 auto
+    20px;
+
+  display:
+    block;
+}
+
+
+.pagina-fotos
+.partidos-vacio h3 {
+
+  margin:
+    0 0 12px;
+
+  color:
+    #172033;
+
+  font-size:
+    27px;
+}
+
+
+.pagina-fotos
+.partidos-vacio p {
+
+  max-width:
+    500px;
+
+  margin:
+    0 auto;
+
+  color:
+    #6b7280;
+
+  font-size:
+    17px;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================================
+   GALERÍA MODAL
+   ========================================================= */
+
+body.galeria-abierta {
+
+  overflow:
+    hidden;
+}
+
+
+.galeria-modal {
+
+  position:
+    fixed;
+
+  inset:
+    0;
+
+  z-index:
+    5000;
+
+  display:
+    none;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    24px;
+}
+
+
+.galeria-modal.galeria-modal-activa {
+
+  display:
+    flex;
+}
+
+
+.galeria-modal-fondo {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    rgba(
+      8,
+      15,
+      35,
+      0.78
+    );
+
+  backdrop-filter:
+    blur(5px);
+}
+
+
+.galeria-modal-contenido {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  width:
+    min(
+      1400px,
+      100%
+    );
+
+  max-height:
+    calc(
+      100vh - 48px
+    );
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  overflow:
+    hidden;
+
+  background:
+    #f4f6f9;
+
+  border-radius:
+    24px;
+
+  box-shadow:
+    0 30px 80px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+}
+
+
+/* =========================================================
+   CABECERA GALERÍA
+   ========================================================= */
+
+/* =========================================================
+   CABECERA GALERÍA - MÁS COMPACTA
+   ========================================================= */
+
+.galeria-modal-cabecera {
+
+  width:
+    100%;
+
+  padding:
+    16px 30px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    25px;
+
+  background:
+    #2538b8;
+
+  color:
+    #ffffff;
+}
+
+
+.galeria-modal-etiqueta {
+
+  display:
+    block;
+
+  margin-bottom:
+    4px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    2.5px;
+
+  opacity:
+    0.85;
+}
+
+
+.galeria-modal-cabecera h2 {
+
+  margin:
+    0 0
+    4px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    30px;
+
+  line-height:
+    1.15;
+}
+
+
+.galeria-modal-fecha {
+
+  display:
+    block;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.5px;
+}
+
+
+.galeria-modal-jornada {
+
+  width:
+    fit-content;
+
+  margin-top:
+    7px;
+
+  padding:
+    6px 13px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  background:
+    #ffffff;
+
+  border-radius:
+    20px;
+
+  color:
+    #2538b8;
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    1px;
+
+  text-transform:
+    uppercase;
+}
+
+/* =========================================================
+   BOTÓN CERRAR GALERÍA
+   ========================================================= */
+
+.galeria-cerrar {
+
+  width:
+    46px;
+
+  height:
+    46px;
+
+  flex-shrink:
+    0;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    transparent;
+
+  color:
+    #ffffff;
+
+  font-size:
+    32px;
+
+  font-weight:
+    400;
+
+  line-height:
+    1;
+
+  cursor:
+    pointer;
+}
+
+
+.galeria-cerrar:hover {
+
+  background:
+    #ffffff;
+
+  color:
+    #2538b8;
+
+  transform:
+    none;
+}
+
+
+/* =========================================================
+   CUERPO GALERÍA
+   ========================================================= */
+
+.galeria-modal-cuerpo {
+
+  width:
+    100%;
+
+  padding:
+    28px;
+
+  overflow-y:
+    auto;
+}
+
+
+.galeria-estado {
+
+  min-height:
+    250px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    30px;
+
+  color:
+    #4b5563;
+
+  font-size:
+    18px;
+
+  font-weight:
+    700;
+
+  text-align:
+    center;
+}
+
+
+.galeria-estado-error {
+
+  color:
+    #9f1239;
+}
+
+
+/* =========================================================
+   GRID DE FOTOGRAFÍAS
+   ========================================================= */
+
+.galeria-grid {
+
+  width:
+    100%;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    18px;
+}
+
+
+.galeria-foto-item {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    4 / 3;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  overflow:
+    hidden;
+
+  border:
+    0;
+
+  border-radius:
+    16px;
+
+  background:
+    #e5e7eb;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 8px 22px
+    rgba(
+      15,
+      23,
+      42,
+      0.09
+    );
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.galeria-foto-item:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(
+      37,
+      56,
+      184,
+      0.16
+    );
+}
+
+
+.galeria-foto-item img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.galeria-foto-item:hover img {
+
+  transform:
+    scale(1.035);
+}
+
+
+.galeria-foto-error {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+.galeria-foto-error-texto {
+
+  padding:
+    15px;
+
+  color:
+    #6b7280;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================================
+   VISOR DE FOTO GRANDE
+   ========================================================= */
+
+.galeria-visor {
+
+  position:
+    fixed;
+
+  inset:
+    0;
+
+  z-index:
+    6000;
+
+  display:
+    none;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    30px 90px;
+}
+
+
+.galeria-visor.galeria-visor-activo {
+
+  display:
+    flex;
+}
+
+
+.galeria-visor-fondo {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    rgba(
+      2,
+      6,
+      23,
+      0.94
+    );
+}
+
+
+.visor-contenido {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  max-width:
+    100%;
+
+  max-height:
+    100%;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+}
+
+
+.visor-contenido img {
+
+  max-width:
+    min(
+      1300px,
+      82vw
+    );
+
+  max-height:
+    82vh;
+
+  width:
+    auto;
+
+  height:
+    auto;
+
+  display:
+    block;
+
+  object-fit:
+    contain;
+
+  border-radius:
+    10px;
+
+  box-shadow:
+    0 25px 65px
+    rgba(
+      0,
+      0,
+      0,
+      0.45
+    );
+}
+
+
+.visor-contador {
+
+  color:
+    #ffffff;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1px;
+}
+
+
+/* =========================================================
+   CONTROLES DEL VISOR
+   ========================================================= */
+
+.visor-cerrar,
+.visor-anterior,
+.visor-siguiente {
+
+  position:
+    absolute;
+
+  z-index:
+    2;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  color:
+    #ffffff;
+
+  cursor:
+    pointer;
+
+  backdrop-filter:
+    blur(5px);
+}
+
+
+.visor-cerrar:hover,
+.visor-anterior:hover,
+.visor-siguiente:hover {
+
+  background:
+    #ffffff;
+
+  color:
+    #2538b8;
+
+  transform:
+    none;
+}
+
+
+.visor-cerrar {
+
+  top:
+    22px;
+
+  right:
+    22px;
+
+  width:
+    48px;
+
+  height:
+    48px;
+
+  font-size:
+    32px;
+}
+
+
+.visor-anterior,
+.visor-siguiente {
+
+  top:
+    50%;
+
+  width:
+    56px;
+
+  height:
+    56px;
+
+  font-size:
+    44px;
+
+  line-height:
+    1;
+
+  transform:
+    translateY(-50%);
+}
+
+
+.visor-anterior:hover,
+.visor-siguiente:hover {
+
+  transform:
+    translateY(-50%);
+}
+
+
+.visor-anterior {
+
+  left:
+    22px;
+}
+
+
+.visor-siguiente {
+
+  right:
+    22px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .pagina-fotos
+  .partidos-pagina {
+
+    padding:
+      40px 35px
+      70px;
+
+  }
+
+
+  .pagina-fotos
+  .grid-partidos {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .pagina-fotos
+  .partido-portada {
+
+    height:
+      260px;
+
+  }
+
+
+  .galeria-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .pagina-fotos
+  .partidos-pagina {
+
+    padding:
+      30px 16px
+      55px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-intro {
+
+    margin-bottom:
+      30px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-mini-titulo {
+
+    font-size:
+      12px;
+
+    letter-spacing:
+      2px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-intro h2 {
+
+    font-size:
+      34px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-intro p {
+
+    font-size:
+      16px;
+
+    line-height:
+      1.6;
+
+  }
+
+
+  .pagina-fotos
+  .grid-partidos {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      20px;
+
+  }
+
+
+  .pagina-fotos
+  .partido-portada {
+
+    height:
+      230px;
+
+  }
+
+
+  .pagina-fotos
+.partido-portada img {
+
+  padding:
+    0;
+
+}
+
+
+  .pagina-fotos
+  .partido-info {
+
+    padding:
+      22px;
+
+  }
+
+
+  .pagina-fotos
+  .partido-info h3 {
+
+    font-size:
+      22px;
+
+  }
+
+
+  .pagina-fotos
+  .partido-info p {
+
+    font-size:
+      15px;
+
+  }
+
+
+  .pagina-fotos
+  .partido-boton {
+
+    margin-top:
+      20px;
+
+    font-size:
+      15px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-vacio {
+
+    padding:
+      32px 20px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-vacio-escudo img {
+
+    width:
+      80px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-vacio h3 {
+
+    font-size:
+      23px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-vacio p {
+
+    font-size:
+      15px;
+
+  }
+
+
+  /* GALERÍA */
+
+  .galeria-modal {
+
+    padding:
+      10px;
+
+  }
+
+
+  .galeria-modal-contenido {
+
+    max-height:
+      calc(
+        100vh - 20px
+      );
+
+    border-radius:
+      18px;
+
+  }
+
+  .galeria-modal-cabecera {
+
+  padding:
+    14px 16px;
+
+  gap:
+    12px;
+}
+
+  .galeria-modal-etiqueta {
+
+    font-size:
+      9px;
+
+    letter-spacing:
+      1.8px;
+
+  }
+
+
+  .galeria-modal-cabecera h2 {
+
+    font-size:
+      22px;
+
+  }
+
+
+  .galeria-modal-fecha {
+
+    font-size:
+      11px;
+
+  }
+
+
+  .galeria-cerrar {
+
+    width:
+      40px;
+
+    height:
+      40px;
+
+    font-size:
+      28px;
+
+  }
+
+
+  .galeria-modal-cuerpo {
+
+    padding:
+      14px;
+
+  }
+
+
+  .galeria-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      10px;
+
+  }
+
+
+  .galeria-foto-item {
+
+    border-radius:
+      10px;
+
+  }
+
+
+  .galeria-estado {
+
+    min-height:
+      200px;
+
+    padding:
+      20px;
+
+    font-size:
+      16px;
+
+  }
+
+
+  /* VISOR */
+
+  .galeria-visor {
+
+    padding:
+      70px 14px
+      85px;
+
+  }
+
+
+  .visor-contenido img {
+
+    max-width:
+      94vw;
+
+    max-height:
+      72vh;
+
+    border-radius:
+      7px;
+
+  }
+
+
+  .visor-cerrar {
+
+    top:
+      14px;
+
+    right:
+      14px;
+
+    width:
+      42px;
+
+    height:
+      42px;
+
+    font-size:
+      28px;
+
+  }
+
+
+  .visor-anterior,
+  .visor-siguiente {
+
+    top:
+      auto;
+
+    bottom:
+      18px;
+
+    width:
+      48px;
+
+    height:
+      48px;
+
+    font-size:
+      38px;
+
+    transform:
+      none;
+
+  }
+
+
+  .visor-anterior:hover,
+  .visor-siguiente:hover {
+
+    transform:
+      none;
+
+  }
+
+
+  .visor-anterior {
+
+    left:
+      calc(
+        50% - 62px
+      );
+
+  }
+
+
+  .visor-siguiente {
+
+    right:
+      calc(
+        50% - 62px
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .pagina-fotos
+  .partidos-pagina {
+
+    padding-left:
+      12px;
+
+    padding-right:
+      12px;
+
+  }
+
+
+  .pagina-fotos
+  .partidos-intro h2 {
+
+    font-size:
+      31px;
+
+  }
+
+
+  .pagina-fotos
+  .partido-portada {
+
+    height:
+      210px;
+
+  }
+
+
+  .pagina-fotos
+  .partido-info {
+
+    padding:
+      19px;
+
+  }
+
+
+  .galeria-modal-cabecera h2 {
+
+    font-size:
+      19px;
+
+  }
+
+
+  .galeria-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+}

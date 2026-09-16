@@ -11,12 +11,23 @@
   >
 
   <title>
-  Fotos | UDA
+    Fotos | UDA
   </title>
+
+
+  <!-- CSS GENERAL -->
 
   <link
     rel="stylesheet"
     href="estilos.css"
+  >
+
+
+  <!-- CSS EXCLUSIVO DE FOTOS -->
+
+  <link
+    rel="stylesheet"
+    href="fotos.css"
   >
 
 </head>
@@ -77,9 +88,9 @@
 
 
 
-    <!-- =========================
-         TÍTULO
-    ========================== -->
+    <!-- =====================================================
+         TÍTULO DE LA PÁGINA
+         ===================================================== -->
 
     <section
       class="plantilla-encabezado encabezado-pagina"
@@ -101,13 +112,15 @@
 
 
   <!-- =====================================================
-       PARTIDOS
+       CONTENIDO PRINCIPAL
        ===================================================== -->
 
   <main class="partidos-pagina">
 
 
-    <!-- INTRODUCCIÓN -->
+    <!-- =====================================================
+         INTRODUCCIÓN
+         ===================================================== -->
 
     <section class="partidos-intro">
 
@@ -115,9 +128,11 @@
         VIVE CADA ENCUENTRO
       </span>
 
+
       <h2>
         Nuestros partidos
       </h2>
+
 
       <p>
         Revive los encuentros de Unión Deportiva
@@ -129,10 +144,10 @@
 
 
     <!-- =====================================================
-         CONTENEDOR DE PARTIDOS
+         GALERÍA DE PARTIDOS
 
-         Más adelante los partidos se cargarán aquí
-         desde Google Sheets / Google Drive.
+         Estos partidos son temporales.
+         Después se cargarán desde Google Sheets.
          ===================================================== -->
 
     <section
@@ -141,28 +156,154 @@
     >
 
 
-      <!-- ESTADO INICIAL -->
-
-      <div class="partidos-vacio">
-
-        <div class="partidos-vacio-escudo">
-
-          <img
-            src="imagenes/Portada.png"
-            alt="Escudo UDA"
-          >
-
-        </div>
+      <div class="grid-partidos">
 
 
-        <h3>
-          Galería de partidos
-        </h3>
+        <!-- =========================
+             PARTIDO 1
+             ========================= -->
 
-        <p>
-          Muy pronto podrás encontrar aquí
-          las fotografías de cada encuentro de UDA.
-        </p>
+        <article class="partido-card">
+
+
+          <div class="partido-portada">
+
+            <img
+              src="imagenes/Portada.png"
+              alt="Partido UDA"
+            >
+
+          </div>
+
+
+          <div class="partido-info">
+
+            <span class="partido-fecha">
+              PARTIDO DE PRUEBA
+            </span>
+
+
+            <h3>
+              UDA vs Rival A
+            </h3>
+
+
+            <p>
+              Revive los mejores momentos
+              de este encuentro.
+            </p>
+
+
+            <button
+              class="partido-boton"
+              type="button"
+            >
+              Ver fotos
+            </button>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- =========================
+             PARTIDO 2
+             ========================= -->
+
+        <article class="partido-card">
+
+
+          <div class="partido-portada">
+
+            <img
+              src="imagenes/Portada.png"
+              alt="Partido UDA"
+            >
+
+          </div>
+
+
+          <div class="partido-info">
+
+            <span class="partido-fecha">
+              PARTIDO DE PRUEBA
+            </span>
+
+
+            <h3>
+              UDA vs Rival B
+            </h3>
+
+
+            <p>
+              Revive los mejores momentos
+              de este encuentro.
+            </p>
+
+
+            <button
+              class="partido-boton"
+              type="button"
+            >
+              Ver fotos
+            </button>
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- =========================
+             PARTIDO 3
+             ========================= -->
+
+        <article class="partido-card">
+
+
+          <div class="partido-portada">
+
+            <img
+              src="imagenes/Portada.png"
+              alt="Partido UDA"
+            >
+
+          </div>
+
+
+          <div class="partido-info">
+
+            <span class="partido-fecha">
+              PARTIDO DE PRUEBA
+            </span>
+
+
+            <h3>
+              UDA vs Rival C
+            </h3>
+
+
+            <p>
+              Revive los mejores momentos
+              de este encuentro.
+            </p>
+
+
+            <button
+              class="partido-boton"
+              type="button"
+            >
+              Ver fotos
+            </button>
+
+          </div>
+
+
+        </article>
+
 
       </div>
 
@@ -187,6 +328,10 @@
   </footer>
 
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
   <script src="script.js"></script>
 
